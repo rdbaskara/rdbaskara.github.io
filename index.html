@@ -49,7 +49,7 @@
             <div>
               <h2 class="display">Halo, saya<br>Rindi Baskara Ujianto</h2>
               <p class="role">DATA ANALYST</p>
-              <p class="tagline">Mengubah data menjadi keputusan yang lebih baik. Fokus pada analisis, visualisasi, dan insight yang actionable.</p>
+              <p class="tagline">Operations & supply chain professional turned data analyst. 7+ years turning operational data into measurable business impact.</p>
               <div class="cta-row">
                 <button class="btn btn-primary" data-goto-page="projects">View Projects</button>
                 <button class="btn btn-ghost">Download CV</button>
@@ -58,16 +58,173 @@
             <div class="hero-avatar">RB</div>
           </div>
           <div class="stats">
-            <div class="stat"><span class="stat-num accent-yellow">3+</span><span class="stat-label">Years Exp</span></div>
-            <div class="stat"><span class="stat-num">12</span><span class="stat-label">Projects</span></div>
-            <div class="stat"><span class="stat-num">8</span><span class="stat-label">Tools</span></div>
-            <div class="stat"><span class="stat-num">5</span><span class="stat-label">Certifications</span></div>
+            <div class="stat"><span class="stat-num accent-yellow">7+</span><span class="stat-label">Years Exp</span></div>
+            <div class="stat"><span class="stat-num">20%</span><span class="stat-label">Inventory Reduced</span></div>
+            <div class="stat"><span class="stat-num">Rp25M</span><span class="stat-label">Monthly Saved</span></div>
+            <div class="stat"><span class="stat-num">4</span><span class="stat-label">Case Studies</span></div>
           </div>
         </article>
 
         <article class="panel" data-tab="highlights">
           <h1 class="panel-title">Highlights</h1>
-          <p class="muted">Section highlights akan diisi kemudian.</p>
+          <div class="swipe-gallery" data-gallery>
+            <button class="swipe-arrow prev" aria-label="Sebelumnya">‹</button>
+            <button class="swipe-arrow next" aria-label="Berikutnya">›</button>
+            <div class="swipe-track">
+              <div class="card swipe-card" data-modal data-modal-title="Supply Chain Optimization">
+                <template class="card-detail-template">
+                  <div class="modal-section-title">Project Background</div>
+                  <p>DataCo Global is facing significant profit losses and delays in order fulfilment. This analysis evaluates commercial discount policies and logistics performance with a view to restoring financial value.</p>
+                  
+                  <div class="modal-section-title">Goals</div>
+                  <ul>
+                    <li>Recover approximately $806K through discount optimization.</li>
+                    <li>Reduce late delivery rate from 57.3% to 42.8%.</li>
+                    <li>Improve fulfillment performance through conditional same-day delivery and 3PL SLA enforcement.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Methodology</div>
+                  <ul>
+                    <li>Data Preparation & Exploratory Data Analysis (EDA)</li>
+                    <li>RFM customer segmentation</li>
+                    <li>XGBoost modeling & Sensitivity/Scenario simulation</li>
+                    <li>Developed 5 Tableau Dashboards</li>
+                  </ul>
+
+                  <div class="modal-section-title">Key Findings</div>
+                  <ul>
+                    <li>$1.81M estimated profit leakage exposure.</li>
+                    <li>82.2% of losses concentrated in Fan Shop, Apparel, and Golf.</li>
+                    <li>57.3% of orders experienced late delivery, particularly in Europe and LATAM.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Business Recommendation</div>
+                  <ul>
+                    <li>Capping discounts at 15% with A/B testing.</li>
+                    <li>Renegotiating 3PL carrier penalty clauses.</li>
+                    <li>Reallocating discount savings to fund conditional same-day delivery.</li>
+                  </ul>
+                </template>
+                <div class="card-title">Supply Chain Optimization</div>
+                <div class="card-meta">Python · Tableau · Excel</div>
+                <div class="card-metric">▲ +$828K revenue</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="Revo Hospital Growth Strategy">
+                <template class="card-detail-template">
+                  <div class="modal-section-title">Project Background</div>
+                  <p>This analysis examines the capacity constraints and income disparities at Revo Hospital following a significant surge in patient numbers that began in December 2024.</p>
+                  
+                  <div class="modal-section-title">Goals</div>
+                  <p>Identify primary operational and financial bottlenecks to absorb rising demand and increase net revenue by 10% over 6 months, from Rp98.87B to a target of Rp108.76B through optimized capacity rebalancing and enhanced cash conversion.</p>
+
+                  <div class="modal-section-title">Methodology</div>
+                  <ul>
+                    <li>Data Preparation & Exploratory Data Analysis (EDA)</li>
+                    <li>Developed 6 Tableau Dashboards</li>
+                    <li>Patient flow analysis & Financial performance analysis</li>
+                  </ul>
+
+                  <div class="modal-section-title">Key Findings</div>
+                  <ul>
+                    <li>Oncology recorded the highest ALOS at 6.98 days.</li>
+                    <li>Cirebon had the highest pending payment ratio at 17.73%.</li>
+                    <li>Central Jakarta generated lower revenue per bed than other flagship branches.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Business Recommendation</div>
+                  <ul>
+                    <li>Review bed allocation between flagship branches.</li>
+                    <li>Improve revenue productivity through pricing and payer mix optimization.</li>
+                    <li>Expand East Java referral partnerships.</li>
+                  </ul>
+                </template>
+                <div class="card-title">Revo Hospital Growth</div>
+                <div class="card-meta">Tableau · Excel</div>
+                <div class="card-metric">▲ +Rp9.89B target</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="RevoBank Credit Card Performance">
+                <template class="card-detail-template">
+                  <div class="modal-section-title">Project Background</div>
+                  <p>RevoBank aims to increase credit card engagement and MDR revenue while minimizing fraud-related losses. Using six months of historical transaction and customer financial data, this project analyzes customer behavior, profitability, and credit risk.</p>
+                  
+                  <div class="modal-section-title">Goals</div>
+                  <ul>
+                    <li>Identify transaction patterns and customer inactivity.</li>
+                    <li>Segment customers based on transaction behavior and financial profiles.</li>
+                    <li>Evaluate fraud exposure and customer debt levels.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Methodology</div>
+                  <ul>
+                    <li>Data Preparation & Exploratory Data Analysis (EDA)</li>
+                    <li>Customer-Level Integration</li>
+                    <li>Customer Segmentation & Financial performance analysis</li>
+                  </ul>
+
+                  <div class="modal-section-title">Key Findings</div>
+                  <ul>
+                    <li>Estimated MDR contribution after reported fraud losses reached Rp5.66B.</li>
+                    <li>Fraud represented 0.10% of transaction count and 0.26% of transaction value.</li>
+                    <li><strong>VIP Customers (17.20%):</strong> Highest avg txn Rp478.72M, Highest profit Rp7.11M, Lowest DTI 12%.</li>
+                    <li><strong>Dormant (38.48%):</strong> Largest segment, avg inactivity 602 days, near-zero contribution.</li>
+                    <li><strong>High Debt (20.61%):</strong> Highest avg DTI 34%, remain active, require monitoring.</li>
+                    <li><strong>Fraud Exposure (23.71%):</strong> Highest avg fraud Rp2.57M, require stronger monitoring.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Business Recommendation</div>
+                  <ul>
+                    <li>Implement tiered loyalty programs for high-value customers.</li>
+                    <li>Launch targeted win-back campaigns for dormant customers.</li>
+                    <li>Implement risk-based credit limit reviews and financial wellness programs.</li>
+                    <li>Strengthen transaction monitoring and risk-based step-up authentication.</li>
+                  </ul>
+                </template>
+                <div class="card-title">RevoBank Credit Card</div>
+                <div class="card-meta">Python · Excel</div>
+                <div class="card-metric">▲ 17.20% VIP segment</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="RevoGrocers Sales Performance">
+                <template class="card-detail-template">
+                  <div class="modal-section-title">Project Background</div>
+                  <p>RevoGrocers is a fictional grocery retailer. This project uses Kaggle transaction data from the Sales, Products, and Categories tables to examine category-level revenue performance and customer repeat-purchase behaviour.</p>
+                  
+                  <div class="modal-section-title">Goals</div>
+                  <p>Assess category performance, identify underperforming categories, and recommend data-driven actions aligned with the business objective of achieving 10% revenue growth.</p>
+
+                  <div class="modal-section-title">Methodology</div>
+                  <ul>
+                    <li>Data Preparation & Exploratory Data Analysis (EDA)</li>
+                    <li>Multi-Table Data Integration</li>
+                    <li>Customer Purchase Behavior Analysis & Financial Performance Analysis</li>
+                  </ul>
+
+                  <div class="modal-section-title">Key Findings</div>
+                  <ul>
+                    <li><strong>Top Revenue:</strong> Confection, Meat, and Poultry generated 34.5% of total revenue.</li>
+                    <li><strong>Underperforming:</strong> Seafood, Grain, and Shellfish contributed only 22.0% combined.</li>
+                    <li><strong>Pricing Insight:</strong> Grain recorded highest avg price (61) but lowest repeat purchase rate (93.7%).</li>
+                    <li><strong>Customer Behaviour:</strong> Repeat purchase rates across highlighted categories ranged from 93.7% to 99.9%.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Business Recommendation</div>
+                  <ul>
+                    <li>Cross-Category Bundling: Pair high-performing categories with lower-performing ones.</li>
+                    <li>Volume-Based Promotions: Test tiered quantity discounts for Grain.</li>
+                    <li>Targeted Cross-Selling: Recipe-based recommendations to improve Seafood discovery.</li>
+                    <li>Free Shipping Strategy: Determine spending thresholds based on order value distribution.</li>
+                  </ul>
+                </template>
+                <div class="card-title">RevoGrocers Analysis</div>
+                <div class="card-meta">SQL · BigQuery · Excel</div>
+                <div class="card-metric">▲ +10% growth target</div>
+              </div>
+
+            </div>
+            <div class="swipe-dots"></div>
+          </div>
         </article>
 
         <article class="panel" data-tab="featured">
@@ -77,22 +234,75 @@
             <button class="swipe-arrow next" aria-label="Berikutnya">›</button>
             <div class="swipe-track">
 
-              <div class="card swipe-card" data-modal data-modal-title="Sales Dashboard" data-modal-body="<p>Dashboard penjualan interaktif menggunakan Tableau. Menampilkan KPI bulanan, tren penjualan per region, dan breakdown per produk.</p><p><strong>Tools:</strong> Tableau, SQL, Excel</p><p><strong>Impact:</strong> Memangkas waktu reporting dari 4 jam menjadi 15 menit per minggu.</p>">
-                <div class="card-title">Sales Dashboard</div>
-                <div class="card-meta">Tableau · SQL</div>
-                <div class="card-metric">▲ 40% faster reporting</div>
+              <div class="card swipe-card" data-modal data-modal-title="Supply Chain Optimization">
+                <template class="card-detail-template">
+                  <p><strong>Background:</strong> DataCo Global faces significant profit losses and order fulfilment delays. This analysis evaluates commercial discount policies and logistics performance to restore financial value.</p>
+                  <p><strong>Goals:</strong></p>
+                  <ul>
+                    <li>Recover ~$806K through discount optimization</li>
+                    <li>Reduce late delivery rate from 57.3% to 42.8%</li>
+                    <li>Improve fulfilment via conditional same-day delivery and 3PL SLA enforcement</li>
+                  </ul>
+                  <p><strong>Methodology:</strong> Data preparation, EDA, RFM customer segmentation, XGBoost modeling, sensitivity &amp; scenario simulation, 5 Tableau dashboards.</p>
+                  <p><strong>Key Findings:</strong> $1.81M estimated profit leakage; 82.2% concentrated in Fan Shop, Apparel, Golf; 57.3% orders delayed (Europe &amp; LATAM).</p>
+                  <p><strong>Recommendations:</strong> Cap discounts at 15% with A/B testing, renegotiate 3PL penalty clauses, reallocate savings to fund same-day delivery.</p>
+                </template>
+                <div class="card-title">Supply Chain Optimization</div>
+                <div class="card-meta">Python · Tableau · Excel</div>
+                <div class="card-metric">▲ +$828K revenue</div>
               </div>
 
-              <div class="card swipe-card" data-modal data-modal-title="Customer Churn Prediction" data-modal-body="<p>Model prediksi churn pelanggan dengan akurasi 87% menggunakan Python dan scikit-learn.</p><p><strong>Tools:</strong> Python, pandas, scikit-learn</p><p><strong>Impact:</strong> Mengidentifikasi 200+ pelanggan berisiko dalam 1 kuartal.</p>">
-                <div class="card-title">Customer Churn</div>
-                <div class="card-meta">Python · scikit-learn</div>
-                <div class="card-metric">▲ 87% accuracy</div>
+              <div class="card swipe-card" data-modal data-modal-title="Revo Hospital Growth Strategy">
+                <template class="card-detail-template">
+                  <p><strong>Background:</strong> Capacity constraints and income disparities at Revo Hospital following a significant patient surge starting December 2024.</p>
+                  <p><strong>Goals:</strong> Identify operational &amp; financial bottlenecks; increase net revenue by 10% over 6 months (Rp98.87B → Rp108.76B target) via capacity rebalancing and enhanced cash conversion.</p>
+                  <p><strong>Methodology:</strong> Data prep, EDA, 6 Tableau dashboards, patient flow analysis, financial performance analysis.</p>
+                  <p><strong>Key Findings:</strong> Oncology highest ALOS (6.98 days); Cirebon highest pending payment ratio (17.73%); Central Jakarta lower revenue per bed than other flagships.</p>
+                  <p><strong>Recommendations:</strong> Review bed allocation between flagship branches, improve revenue productivity via pricing &amp; payer mix optimization, expand East Java referral partnerships.</p>
+                </template>
+                <div class="card-title">Revo Hospital Growth</div>
+                <div class="card-meta">Tableau · Excel</div>
+                <div class="card-metric">▲ +Rp9.89B target</div>
               </div>
 
-              <div class="card swipe-card" data-modal data-modal-title="Cohort Analysis" data-modal-body="<p>Analisis retensi pelanggan per kohort dengan SQL murni, tanpa tool BI.</p><p><strong>Tools:</strong> SQL (PostgreSQL)</p><p><strong>Impact:</strong> Menemukan 3 segmen pelanggan dengan retensi &lt;30% untuk difokuskan tim marketing.</p>">
-                <div class="card-title">Cohort Analysis</div>
-                <div class="card-meta">SQL</div>
-                <div class="card-metric">▲ 3 segmen baru</div>
+              <div class="card swipe-card" data-modal data-modal-title="RevoBank Credit Card Performance">
+                <template class="card-detail-template">
+                  <p><strong>Background:</strong> RevoBank aims to increase credit card engagement and MDR revenue while minimizing fraud losses. Analysis of 6 months of transaction &amp; customer financial data.</p>
+                  <p><strong>Goals:</strong> Identify transaction patterns &amp; inactivity, segment customers by behavior &amp; financial profile, evaluate fraud exposure &amp; debt levels.</p>
+                  <p><strong>Methodology:</strong> Data prep, EDA, customer-level integration, segmentation, financial performance analysis.</p>
+                  <p><strong>Key Findings:</strong></p>
+                  <ul>
+                    <li>MDR contribution after fraud losses: Rp5.66B</li>
+                    <li>Fraud: 0.10% of transaction count, 0.26% of transaction value</li>
+                    <li>VIP (17.20%): avg txn Rp478.72M, avg profit Rp7.11M, lowest DTI 12%</li>
+                    <li>Dormant (38.48%): avg inactivity 602 days, near-zero contribution</li>
+                    <li>High Debt (20.61%): avg DTI 34%, still active — needs credit risk monitoring</li>
+                    <li>Fraud Exposure (23.71%): avg fraud amount Rp2.57M</li>
+                  </ul>
+                  <p><strong>Recommendations:</strong> Tiered loyalty for high-value, win-back campaigns for dormant, risk-based credit limit reviews, risk-based step-up authentication.</p>
+                </template>
+                <div class="card-title">RevoBank Credit Card</div>
+                <div class="card-meta">Python · Excel</div>
+                <div class="card-metric">▲ 17.20% VIP segment</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="RevoGrocers Sales Performance">
+                <template class="card-detail-template">
+                  <p><strong>Background:</strong> Fictional grocery retailer using Kaggle transaction data (Sales, Products, Categories tables) to examine category-level revenue and repeat-purchase behaviour.</p>
+                  <p><strong>Goals:</strong> Assess category performance, identify underperforming categories, recommend data-driven actions toward +10% revenue growth.</p>
+                  <p><strong>Methodology:</strong> Data prep, EDA, multi-table integration, customer purchase behavior analysis, financial performance analysis.</p>
+                  <p><strong>Key Findings:</strong></p>
+                  <ul>
+                    <li>Top revenue: Confection, Meat, Poultry (34.5% combined)</li>
+                    <li>Underperforming: Seafood, Grain, Shellfish (22.0% combined)</li>
+                    <li>Grain: highest avg price (61), lowest repeat rate (93.7%)</li>
+                    <li>Repeat rates across 6 categories: 93.7% – 99.9%</li>
+                  </ul>
+                  <p><strong>Recommendations:</strong> Cross-category bundling (Meat/Poultry with lower performers), volume-based promos for Grain, recipe-based recommendations for Seafood/Shellfish, free shipping strategy based on order value distribution.</p>
+                </template>
+                <div class="card-title">RevoGrocers Analysis</div>
+                <div class="card-meta">SQL · BigQuery · Excel</div>
+                <div class="card-metric">▲ +10% growth target</div>
               </div>
 
             </div>
@@ -104,16 +314,20 @@
           <h1 class="panel-title">What I Do</h1>
           <div class="grid">
             <div class="card">
-              <div class="card-title">Data Cleaning</div>
-              <div class="card-meta">Mengubah data mentah menjadi dataset siap analisis</div>
+              <div class="card-title">Data Reconciliation & Cleaning</div>
+              <div class="card-meta">Cleaning raw data, synchronizing inventory/transaction records, ensuring dataset accuracy.</div>
             </div>
             <div class="card">
-              <div class="card-title">Dashboarding</div>
-              <div class="card-meta">Membangun visualisasi yang mudah dipahami stakeholder</div>
+              <div class="card-title">Interactive Dashboarding</div>
+              <div class="card-meta">Building intuitive visualizations of operational and financial KPIs for stakeholder monitoring.</div>
             </div>
             <div class="card">
-              <div class="card-title">Insight Generation</div>
-              <div class="card-meta">Menerjemahkan data menjadi rekomendasi bisnis</div>
+              <div class="card-title">Operational & Supply Chain Analytics</div>
+              <div class="card-meta">Analyzing inventory trends, logistics efficiency, and cost structures to optimize resources.</div>
+            </div>
+            <div class="card">
+              <div class="card-title">Actionable Business Insights</div>
+              <div class="card-meta">Translating data findings into strategic recommendations that drive revenue growth.</div>
             </div>
           </div>
         </article>
@@ -128,7 +342,7 @@
           <div class="bio-row">
             <div class="avatar-lg">RB</div>
             <div>
-              <p>Halo! Saya Rindi Baskara Ujianto, seorang Data Analyst dengan pengalaman 3+ tahun di bidang analisis data, dashboarding, dan predictive modeling.</p>
+              <p>Operations & Supply Chain professional with 7+ years across manufacturing, finance, and logistics — now transitioning into data analytics. Delivered measurable improvements: 20% inventory reduction, Rp25M monthly cost savings. Completed RevoU's Full Stack Data Analytics program with hands-on projects in SQL, Python, Tableau, and Excel. Skilled at translating operational data into actionable insights for data-driven decisions.</p>
               <p class="muted" style="margin-top:12px;">📍 Jakarta, Indonesia · 🟢 Open to work</p>
             </div>
           </div>
@@ -138,14 +352,14 @@
           <h1 class="panel-title">Education</h1>
           <div class="timeline">
             <div class="role-item">
-              <div class="role-title">S1 Statistika</div>
-              <div class="role-company">Universitas Indonesia</div>
-              <div class="role-period">2016 — 2020</div>
+              <div class="role-title">Full Stack Data Analytics</div>
+              <div class="role-company">RevoU</div>
+              <div class="role-period">Jun 2026 — Oct 2026</div>
             </div>
             <div class="role-item">
-              <div class="role-title">Google Data Analytics Certificate</div>
-              <div class="role-company">Coursera</div>
-              <div class="role-period">2022</div>
+              <div class="role-title">Machine Engineering</div>
+              <div class="role-company">Vocational High School 1 Gombong</div>
+              <div class="role-period">Jun 2011 — May 2014</div>
             </div>
           </div>
         </article>
@@ -153,18 +367,22 @@
         <article class="panel" data-tab="skills">
           <h1 class="panel-title">Skills</h1>
           <div class="chip-group-title">Languages</div>
-          <div><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span></div>
+          <div><span class="chip">Python</span><span class="chip">SQL</span></div>
           <div class="chip-group-title">Tools</div>
-          <div><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Looker</span><span class="chip">Excel</span><span class="chip">dbt</span></div>
+          <div><span class="chip">Tableau</span><span class="chip">Microsoft Excel</span><span class="chip">Google BigQuery</span><span class="chip">Google Colab</span></div>
           <div class="chip-group-title">Libraries</div>
-          <div><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">matplotlib</span><span class="chip">seaborn</span></div>
+          <div><span class="chip">pandas</span><span class="chip">numpy</span><span class="chip">scikit-learn</span><span class="chip">matplotlib</span><span class="chip">seaborn</span></div>
         </article>
 
         <article class="panel" data-tab="quotes">
           <h1 class="panel-title">Quotes</h1>
           <div class="quote">
-            <p class="quote-text">"Data bukan sekadar angka — ia adalah cerita yang menunggu untuk dibaca dengan tepat."</p>
-            <p class="quote-attr">— Filosofi kerja saya</p>
+            <p class="quote-text">"Enthusiasm is common. Endurance is rare."</p>
+            <p class="quote-attr">— Angela Duckworth</p>
+          </div>
+          <div class="quote" style="margin-top:16px;">
+            <p class="quote-text">"Systematic planning prepares us for the unexpected, while a continuously growing mind adapts to any condition — grounded in endless practice and deep humility."</p>
+            <p class="quote-attr">— iBas</p>
           </div>
         </article>
 
@@ -174,56 +392,123 @@
       <section class="page" data-page="experience">
 
         <article class="panel active" data-tab="timeline">
-          <h1 class="panel-title">Timeline</h1>
-          <div class="timeline">
-            <div class="role-item">
-              <div class="role-title">Data Analyst</div>
-              <div class="role-company">Company A</div>
-              <div class="role-period">2022 — Present</div>
-            </div>
-            <div class="role-item">
-              <div class="role-title">Junior Analyst</div>
-              <div class="role-company">Company B</div>
-              <div class="role-period">2020 — 2022</div>
-            </div>
-          </div>
-        </article>
+          <h1 class="panel-title">Career Timeline</h1>
+          <div class="swipe-gallery" data-gallery>
+            <button class="swipe-arrow prev" aria-label="Sebelumnya">‹</button>
+            <button class="swipe-arrow next" aria-label="Berikutnya">›</button>
+            <div class="swipe-track">
 
-        <article class="panel" data-tab="company-a">
-          <h1 class="panel-title">Data Analyst — Company A</h1>
-          <div class="timeline">
-            <div class="role-item">
-              <div class="role-title">Tanggung Jawab</div>
-              <p class="muted" style="margin-top:8px;">Membangun dashboard mingguan untuk tim sales & marketing; melakukan A/B testing pada kampanye digital.</p>
-            </div>
-            <div class="role-item">
-              <div class="role-title">Impact</div>
-              <p style="margin-top:8px;"><span class="card-metric">▲ 40%</span> waktu reporting lebih cepat</p>
-              <p style="margin-top:4px;"><span class="card-metric">▲ 12%</span> peningkatan conversion rate</p>
-            </div>
-          </div>
-        </article>
+              <div class="card swipe-card" data-modal data-modal-title="Administration | PT. BPR KARYAJATNIKA SADAYA">
+                <template class="card-detail-template">
+                  <p><strong>Period:</strong> Jan 2024 — Present</p>
+                  <p><strong>Job Desk:</strong></p>
+                  <ul>
+                    <li>Managed admin operations, partner transactions, and lease records for 1,000+ EDC assets using Excel; monthly stock reconciliations to maintain accurate inventory.</li>
+                    <li>Analyzed EDC partner lease obligations and contractual penalties; identified rentals overdue by 1–2 months and potential service access restrictions.</li>
+                    <li>Centralized operational data, standardized workflows via revised shipping SOPs and asset request forms, synchronized ATM Card–EDC inventory records.</li>
+                  </ul>
+                  <p><strong>Impact:</strong></p>
+                  <ul>
+                    <li>Maintained accurate and up-to-date inventory via monthly reconciliations.</li>
+                    <li>Accelerated non-Android → Android EDC migration, optimized SIM utilization, reduced operating costs by up to Rp25M/month.</li>
+                    <li>Improved overall process efficiency and data accuracy.</li>
+                  </ul>
+                </template>
+                <div class="card-title">Administration</div>
+                <div class="card-meta">PT. BPR KARYAJATNIKA SADAYA · Jan 2024 — Present</div>
+                <div class="card-metric">▲ Rp25M / month saved</div>
+              </div>
 
-        <article class="panel" data-tab="company-b">
-          <h1 class="panel-title">Junior Analyst — Company B</h1>
-          <div class="timeline">
-            <div class="role-item">
-              <div class="role-title">Tanggung Jawab</div>
-              <p class="muted" style="margin-top:8px;">Data cleaning dan ad-hoc analysis untuk tim operasional.</p>
+              <div class="card swipe-card" data-modal data-modal-title="Administration | PT. PRATAMA LINK">
+                <template class="card-detail-template">
+                  <p><strong>Period:</strong> Jun 2022 — Dec 2023</p>
+                  <p><strong>Job Desk:</strong></p>
+                  <ul>
+                    <li>Reconciled daily high-volume partner transactions using Excel by matching biller records against bank transfer statements.</li>
+                    <li>Designed and implemented standardized Excel reconciliation templates to streamline tracking.</li>
+                  </ul>
+                  <p><strong>Impact:</strong></p>
+                  <ul>
+                    <li>Ensured transaction accuracy and financial data integrity consistently.</li>
+                    <li>Reduced manual reconciliation discrepancies and improved daily financial reporting turnaround by up to 20%.</li>
+                  </ul>
+                </template>
+                <div class="card-title">Administration</div>
+                <div class="card-meta">PT. PRATAMA LINK · Jun 2022 — Dec 2023</div>
+                <div class="card-metric">▲ 20% faster reporting</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="Inventory Control | PT. UNICORN TOSAN PERKASA">
+                <template class="card-detail-template">
+                  <p><strong>Period:</strong> Jun 2021 — Jun 2022</p>
+                  <p><strong>Job Desk:</strong></p>
+                  <ul>
+                    <li>Validated daily material requests against warehouse stock, BOM, and historical consumption using Excel.</li>
+                    <li>Monitored warehouse inventory against engineering requirements using quantitative tracking.</li>
+                    <li>Coordinated and tracked end-to-end material transactions between field ops and purchasing.</li>
+                  </ul>
+                  <p><strong>Impact:</strong></p>
+                  <ul>
+                    <li>Prevented unnecessary purchases and improved inventory allocation.</li>
+                    <li>Contributed to a 20% reduction in excess inventory while maintaining material availability.</li>
+                    <li>Improved procurement coordination and inventory data visibility.</li>
+                  </ul>
+                </template>
+                <div class="card-title">Inventory Control</div>
+                <div class="card-meta">PT. UNICORN TOSAN PERKASA · Jun 2021 — Jun 2022</div>
+                <div class="card-metric">▲ 20% less excess inventory</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="PPIC: Component Ordering | PT. TOYOTA MOTOR MANUFACTURING INDONESIA">
+                <template class="card-detail-template">
+                  <p><strong>Period:</strong> May 2016 — Feb 2019</p>
+                  <p><strong>Job Desk:</strong></p>
+                  <ul>
+                    <li>Developed component procurement and inventory management plans using Excel; analyzed inventory data to maintain safety stock.</li>
+                    <li>Prepared inventory level reports for management.</li>
+                    <li>Implemented emergency ordering protocols for low-demand components.</li>
+                  </ul>
+                  <p><strong>Impact:</strong></p>
+                  <ul>
+                    <li>Maintained appropriate safety stock levels through systematic inventory data analysis.</li>
+                    <li>Provided clear visibility into component availability for procurement planning.</li>
+                    <li>Reduced excess component inventory by 20% via parameter optimization and ordering protocols.</li>
+                  </ul>
+                </template>
+                <div class="card-title">PPIC: Component Ordering</div>
+                <div class="card-meta">PT. TOYOTA MOTOR MANUFACTURING INDONESIA · May 2016 — Feb 2019</div>
+                <div class="card-metric">▲ 20% less excess inventory</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="Warehouse Operator | PT. TOYOTA MOTOR MANUFACTURING INDONESIA">
+                <template class="card-detail-template">
+                  <p><strong>Period:</strong> Feb 2016 — Apr 2016</p>
+                  <p><strong>Job Desk:</strong></p>
+                  <ul>
+                    <li>Monitored warehouse inventory using Excel and applied FIFO procedures.</li>
+                    <li>Recorded and verified incoming/outgoing production equipment transactions.</li>
+                  </ul>
+                  <p><strong>Impact:</strong></p>
+                  <ul>
+                    <li>Maintained proper inventory rotation, stock traceability, and accurate records.</li>
+                    <li>Fast-tracked promotion to PPIC Staff within 3 months due to exceptional performance.</li>
+                  </ul>
+                </template>
+                <div class="card-title">Warehouse Operator</div>
+                <div class="card-meta">PT. TOYOTA MOTOR MANUFACTURING INDONESIA · Feb 2016 — Apr 2016</div>
+                <div class="card-metric">▲ 3-month promotion</div>
+              </div>
+
             </div>
-            <div class="role-item">
-              <div class="role-title">Impact</div>
-              <p style="margin-top:8px;"><span class="card-metric">▲ 25%</span> pengurangan error pada data entry</p>
-            </div>
+            <div class="swipe-dots"></div>
           </div>
         </article>
 
         <article class="panel" data-tab="achievements">
           <h1 class="panel-title">Achievements</h1>
           <div class="stats">
-            <div class="stat"><span class="stat-num accent-yellow">40%</span><span class="stat-label">Faster Reporting</span></div>
-            <div class="stat"><span class="stat-num">12%</span><span class="stat-label">Conversion Lift</span></div>
-            <div class="stat"><span class="stat-num">25%</span><span class="stat-label">Less Errors</span></div>
+            <div class="stat"><span class="stat-num accent-yellow">Rp25M</span><span class="stat-label">Monthly Cost Saved</span></div>
+            <div class="stat"><span class="stat-num">20%</span><span class="stat-label">Excess Inventory Reduced</span></div>
           </div>
         </article>
 
@@ -234,31 +519,179 @@
 
         <article class="panel active" data-tab="all">
           <h1 class="panel-title">All Projects</h1>
-          <div class="grid">
-            <div class="card" data-modal data-modal-title="Sales Dashboard" data-modal-body="<p>Dashboard penjualan interaktif di Tableau. Menampilkan KPI bulanan dan breakdown per region.</p><p><strong>Impact:</strong> 40% faster reporting.</p>">
-              <div class="card-title">Sales Dashboard</div>
-              <div class="card-meta">Tableau · SQL</div>
-              <div class="card-metric">▲ 40% faster</div>
+          <div class="swipe-gallery" data-gallery>
+            <button class="swipe-arrow prev" aria-label="Sebelumnya">‹</button>
+            <button class="swipe-arrow next" aria-label="Berikutnya">›</button>
+            <div class="swipe-track">
+
+              <div class="card swipe-card" data-modal data-modal-title="Supply Chain Optimization">
+                <template class="card-detail-template">
+                  <div class="modal-section-title">Project Background</div>
+                  <p>DataCo Global is facing significant profit losses and delays in order fulfilment. This analysis evaluates commercial discount policies and logistics performance with a view to restoring financial value.</p>
+                  
+                  <div class="modal-section-title">Goals</div>
+                  <ul>
+                    <li>Recover approximately $806K through discount optimization.</li>
+                    <li>Reduce late delivery rate from 57.3% to 42.8%.</li>
+                    <li>Improve fulfillment performance through conditional same-day delivery and 3PL SLA enforcement.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Methodology</div>
+                  <ul>
+                    <li>Data Preparation & Exploratory Data Analysis (EDA)</li>
+                    <li>RFM customer segmentation</li>
+                    <li>XGBoost modeling & Sensitivity/Scenario simulation</li>
+                    <li>Developed 5 Tableau Dashboards</li>
+                  </ul>
+
+                  <div class="modal-section-title">Key Findings</div>
+                  <ul>
+                    <li>$1.81M estimated profit leakage exposure.</li>
+                    <li>82.2% of losses concentrated in Fan Shop, Apparel, and Golf.</li>
+                    <li>57.3% of orders experienced late delivery, particularly in Europe and LATAM.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Business Recommendation</div>
+                  <ul>
+                    <li>Capping discounts at 15% with A/B testing.</li>
+                    <li>Renegotiating 3PL carrier penalty clauses.</li>
+                    <li>Reallocating discount savings to fund conditional same-day delivery.</li>
+                  </ul>
+                </template>
+                <div class="card-title">Supply Chain Optimization</div>
+                <div class="card-meta">Python · Tableau · Excel</div>
+                <div class="card-metric">▲ +$828K revenue</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="Revo Hospital Growth Strategy">
+                <template class="card-detail-template">
+                  <div class="modal-section-title">Project Background</div>
+                  <p>This analysis examines the capacity constraints and income disparities at Revo Hospital following a significant surge in patient numbers that began in December 2024.</p>
+                  
+                  <div class="modal-section-title">Goals</div>
+                  <p>Identify primary operational and financial bottlenecks to absorb rising demand and increase net revenue by 10% over 6 months, from Rp98.87B to a target of Rp108.76B through optimized capacity rebalancing and enhanced cash conversion.</p>
+
+                  <div class="modal-section-title">Methodology</div>
+                  <ul>
+                    <li>Data Preparation & Exploratory Data Analysis (EDA)</li>
+                    <li>Developed 6 Tableau Dashboards</li>
+                    <li>Patient flow analysis & Financial performance analysis</li>
+                  </ul>
+
+                  <div class="modal-section-title">Key Findings</div>
+                  <ul>
+                    <li>Oncology recorded the highest ALOS at 6.98 days.</li>
+                    <li>Cirebon had the highest pending payment ratio at 17.73%.</li>
+                    <li>Central Jakarta generated lower revenue per bed than other flagship branches.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Business Recommendation</div>
+                  <ul>
+                    <li>Review bed allocation between flagship branches.</li>
+                    <li>Improve revenue productivity through pricing and payer mix optimization.</li>
+                    <li>Expand East Java referral partnerships.</li>
+                  </ul>
+                </template>
+                <div class="card-title">Revo Hospital Growth</div>
+                <div class="card-meta">Tableau · Excel</div>
+                <div class="card-metric">▲ +Rp9.89B target</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="RevoBank Credit Card Performance">
+                <template class="card-detail-template">
+                  <div class="modal-section-title">Project Background</div>
+                  <p>RevoBank aims to increase credit card engagement and MDR revenue while minimizing fraud-related losses. Using six months of historical transaction and customer financial data, this project analyzes customer behavior, profitability, and credit risk.</p>
+                  
+                  <div class="modal-section-title">Goals</div>
+                  <ul>
+                    <li>Identify transaction patterns and customer inactivity.</li>
+                    <li>Segment customers based on transaction behavior and financial profiles.</li>
+                    <li>Evaluate fraud exposure and customer debt levels.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Methodology</div>
+                  <ul>
+                    <li>Data Preparation & Exploratory Data Analysis (EDA)</li>
+                    <li>Customer-Level Integration</li>
+                    <li>Customer Segmentation & Financial performance analysis</li>
+                  </ul>
+
+                  <div class="modal-section-title">Key Findings</div>
+                  <ul>
+                    <li>Estimated MDR contribution after reported fraud losses reached Rp5.66B.</li>
+                    <li>Fraud represented 0.10% of transaction count and 0.26% of transaction value.</li>
+                    <li><strong>VIP Customers (17.20%):</strong> Highest avg txn Rp478.72M, Highest profit Rp7.11M, Lowest DTI 12%.</li>
+                    <li><strong>Dormant (38.48%):</strong> Largest segment, avg inactivity 602 days, near-zero contribution.</li>
+                    <li><strong>High Debt (20.61%):</strong> Highest avg DTI 34%, remain active, require monitoring.</li>
+                    <li><strong>Fraud Exposure (23.71%):</strong> Highest avg fraud Rp2.57M, require stronger monitoring.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Business Recommendation</div>
+                  <ul>
+                    <li>Implement tiered loyalty programs for high-value customers.</li>
+                    <li>Launch targeted win-back campaigns for dormant customers.</li>
+                    <li>Implement risk-based credit limit reviews and financial wellness programs.</li>
+                    <li>Strengthen transaction monitoring and risk-based step-up authentication.</li>
+                  </ul>
+                </template>
+                <div class="card-title">RevoBank Credit Card</div>
+                <div class="card-meta">Python · Excel</div>
+                <div class="card-metric">▲ 17.20% VIP segment</div>
+              </div>
+
+              <div class="card swipe-card" data-modal data-modal-title="RevoGrocers Sales Performance">
+                <template class="card-detail-template">
+                  <div class="modal-section-title">Project Background</div>
+                  <p>RevoGrocers is a fictional grocery retailer. This project uses Kaggle transaction data from the Sales, Products, and Categories tables to examine category-level revenue performance and customer repeat-purchase behaviour.</p>
+                  
+                  <div class="modal-section-title">Goals</div>
+                  <p>Assess category performance, identify underperforming categories, and recommend data-driven actions aligned with the business objective of achieving 10% revenue growth.</p>
+
+                  <div class="modal-section-title">Methodology</div>
+                  <ul>
+                    <li>Data Preparation & Exploratory Data Analysis (EDA)</li>
+                    <li>Multi-Table Data Integration</li>
+                    <li>Customer Purchase Behavior Analysis & Financial Performance Analysis</li>
+                  </ul>
+
+                  <div class="modal-section-title">Key Findings</div>
+                  <ul>
+                    <li><strong>Top Revenue:</strong> Confection, Meat, and Poultry generated 34.5% of total revenue.</li>
+                    <li><strong>Underperforming:</strong> Seafood, Grain, and Shellfish contributed only 22.0% combined.</li>
+                    <li><strong>Pricing Insight:</strong> Grain recorded highest avg price (61) but lowest repeat purchase rate (93.7%).</li>
+                    <li><strong>Customer Behaviour:</strong> Repeat purchase rates across highlighted categories ranged from 93.7% to 99.9%.</li>
+                  </ul>
+
+                  <div class="modal-section-title">Business Recommendation</div>
+                  <ul>
+                    <li>Cross-Category Bundling: Pair high-performing categories with lower-performing ones.</li>
+                    <li>Volume-Based Promotions: Test tiered quantity discounts for Grain.</li>
+                    <li>Targeted Cross-Selling: Recipe-based recommendations to improve Seafood discovery.</li>
+                    <li>Free Shipping Strategy: Determine spending thresholds based on order value distribution.</li>
+                  </ul>
+                </template>
+                <div class="card-title">RevoGrocers Analysis</div>
+                <div class="card-meta">SQL · BigQuery · Excel</div>
+                <div class="card-metric">▲ +10% growth target</div>
+              </div>
+
             </div>
-            <div class="card" data-modal data-modal-title="Churn Prediction" data-modal-body="<p>Model ML untuk prediksi churn pelanggan dengan akurasi 87%.</p><p><strong>Tools:</strong> Python, scikit-learn</p>">
-              <div class="card-title">Churn Prediction</div>
-              <div class="card-meta">Python · scikit-learn</div>
-              <div class="card-metric">▲ 87% accuracy</div>
-            </div>
-            <div class="card" data-modal data-modal-title="SQL Cohort Analysis" data-modal-body="<p>Analisis retensi pelanggan dengan SQL murni.</p>">
-              <div class="card-title">Cohort Analysis</div>
-              <div class="card-meta">SQL</div>
-              <div class="card-metric">▲ 30% insight</div>
-            </div>
+            <div class="swipe-dots"></div>
           </div>
         </article>
 
         <article class="panel" data-tab="sql">
           <h1 class="panel-title">SQL Projects</h1>
           <div class="grid">
-            <div class="card">
-              <div class="card-title">Cohort Analysis</div>
-              <div class="card-meta">SQL</div>
+            <div class="card" data-modal data-modal-title="RevoGrocers Sales Performance">
+              <template class="card-detail-template">
+                <p><strong>Background:</strong> Fictional grocery retailer using Kaggle transaction data (Sales, Products, Categories).</p>
+                <p><strong>Tools:</strong> Google BigQuery (SQL), Excel, Google Slide</p>
+                <p><strong>Impact:</strong> +10% revenue growth target via cross-category bundling &amp; volume-based promotions.</p>
+              </template>
+              <div class="card-title">RevoGrocers Analysis</div>
+              <div class="card-meta">SQL · BigQuery</div>
+              <div class="card-metric">▲ +10% growth target</div>
             </div>
           </div>
         </article>
@@ -266,9 +699,23 @@
         <article class="panel" data-tab="python">
           <h1 class="panel-title">Python / ML Projects</h1>
           <div class="grid">
-            <div class="card">
-              <div class="card-title">Churn Prediction</div>
-              <div class="card-meta">Python · scikit-learn</div>
+            <div class="card" data-modal data-modal-title="Supply Chain Optimization">
+              <template class="card-detail-template">
+                <p><strong>Tools:</strong> Google Colab (Python), Tableau, Excel</p>
+                <p><strong>Impact:</strong> +$828K projected revenue; +5.8% growth target.</p>
+              </template>
+              <div class="card-title">Supply Chain Optimization</div>
+              <div class="card-meta">Python · Tableau</div>
+              <div class="card-metric">▲ +$828K revenue</div>
+            </div>
+            <div class="card" data-modal data-modal-title="RevoBank Credit Card">
+              <template class="card-detail-template">
+                <p><strong>Tools:</strong> Google Colab (Python), Excel</p>
+                <p><strong>Impact:</strong> Rp7.11M VIP profit, 17.20% VIP segment.</p>
+              </template>
+              <div class="card-title">RevoBank Credit Card</div>
+              <div class="card-meta">Python · Excel</div>
+              <div class="card-metric">▲ 17.20% VIP segment</div>
             </div>
           </div>
         </article>
@@ -276,9 +723,23 @@
         <article class="panel" data-tab="dashboard">
           <h1 class="panel-title">Dashboard Projects</h1>
           <div class="grid">
-            <div class="card">
-              <div class="card-title">Sales Dashboard</div>
-              <div class="card-meta">Tableau · SQL</div>
+            <div class="card" data-modal data-modal-title="Supply Chain Optimization">
+              <template class="card-detail-template">
+                <p><strong>Tools:</strong> Tableau (5 dashboards)</p>
+                <p><strong>Impact:</strong> +$828K projected revenue.</p>
+              </template>
+              <div class="card-title">Supply Chain Optimization</div>
+              <div class="card-meta">Tableau</div>
+              <div class="card-metric">▲ +$828K revenue</div>
+            </div>
+            <div class="card" data-modal data-modal-title="Revo Hospital Growth Strategy">
+              <template class="card-detail-template">
+                <p><strong>Tools:</strong> Tableau (6 dashboards), Excel</p>
+                <p><strong>Impact:</strong> +Rp9.89B projected revenue.</p>
+              </template>
+              <div class="card-title">Revo Hospital Growth</div>
+              <div class="card-meta">Tableau · Excel</div>
+              <div class="card-metric">▲ +Rp9.89B target</div>
             </div>
           </div>
         </article>
@@ -291,30 +752,26 @@
         <article class="panel active" data-tab="get-in-touch">
           <h1 class="panel-title">Get in Touch</h1>
           <div class="contact-hero">
-            <p style="font-size:18px; color: var(--text-secondary);">Let's Connect...</p>
+            <p style="font-size:18px; color: var(--text-secondary);">Let's work together.</p>
             <a href="mailto:baskara.ur@gmail.com" class="contact-email">baskara.ur@gmail.com</a>
             <p class="contact-info">📍 Jakarta, Indonesia (GMT+7)</p>
           </div>
           <div class="cta-row">
-            <a href="mailto:hello@rdbaskara.dev" class="btn btn-primary" style="text-decoration:none;">Kirim Email</a>
-            <a href="#" class="btn btn-ghost" style="text-decoration:none;">Jadwalkan Call</a>
+            <a href="mailto:baskara.ur@gmail.com" class="btn btn-primary" style="text-decoration:none;">Send Email</a>
+            <a href="https://linkedin.com/in/rbaskara" class="btn btn-ghost" style="text-decoration:none;" target="_blank" rel="noopener">Connect on LinkedIn</a>
           </div>
         </article>
 
         <article class="panel" data-tab="social">
           <h1 class="panel-title">Social</h1>
           <div class="social-list">
-            <a href="https://linkedin.com/in/rdbaskara" class="social-link" target="_blank" rel="noopener">
+            <a href="https://linkedin.com/in/rbaskara" class="social-link" target="_blank" rel="noopener">
               <span class="social-icon">in</span>
-              <span>LinkedIn — /in/rdbaskara</span>
+              <span>LinkedIn — /in/rbaskara</span>
             </a>
-            <a href="https://github.com/rdbaskara" class="social-link" target="_blank" rel="noopener">
-              <span class="social-icon">&lt;/&gt;</span>
-              <span>GitHub — @rdbaskara</span>
-            </a>
-            <a href="https://kaggle.com/rdbaskara" class="social-link" target="_blank" rel="noopener">
-              <span class="social-icon">Kg</span>
-              <span>Kaggle — @rdbaskara</span>
+            <a href="mailto:baskara.ur@gmail.com" class="social-link">
+              <span class="social-icon">@</span>
+              <span>Email — baskara.ur@gmail.com</span>
             </a>
           </div>
         </article>
@@ -323,21 +780,21 @@
           <h1 class="panel-title">Availability</h1>
           <div class="quote">
             <p class="quote-text" style="font-style:normal; font-size:16px; color: var(--text-primary);">🟢 Open to work — Full-time & Freelance</p>
-            <p class="quote-attr" style="margin-top:16px;">Tipe project yang dicari:</p>
+            <p class="quote-attr" style="margin-top:16px;">Focus areas:</p>
             <ul style="margin-top:8px; margin-left:20px; color: var(--text-secondary);">
-              <li>Dashboarding & reporting</li>
-              <li>Data cleaning & pipeline</li>
-              <li>Predictive modeling</li>
-              <li>Analytics consulting</li>
+              <li>Data Analytics & Business Intelligence</li>
+              <li>Supply Chain & Operations Analytics</li>
+              <li>Dashboard Development (Tableau, Power BI)</li>
+              <li>SQL / Python data pipeline & modeling</li>
             </ul>
-            <p class="quote-attr" style="margin-top:16px;">⏱ Response time: 1×24 jam</p>
+            <p class="quote-attr" style="margin-top:16px;">⏱ Response time: within 24 hours</p>
           </div>
         </article>
 
         <article class="panel" data-tab="send-message">
           <h1 class="panel-title">Send Message</h1>
-          <p class="muted" style="margin-bottom:16px;">Klik tombol di bawah untuk membuka aplikasi email kamu (mailto).</p>
-          <a href="mailto:hello@rdbaskara.dev?subject=Halo%20Raditya" class="btn btn-primary" style="text-decoration:none;">Buka Aplikasi Email</a>
+          <p class="muted" style="margin-bottom:16px;">Click below to open your email app (mailto).</p>
+          <a href="mailto:baskara.ur@gmail.com?subject=Halo%20Rindi%20-%20Portfolio%20Inquiry" class="btn btn-primary" style="text-decoration:none;">Open Email App</a>
         </article>
 
       </section>

@@ -753,6 +753,34 @@ body { display: flex; flex-direction: column; }
 .swipe-arrow.prev { left: -8px; }
 .swipe-arrow.next { right: -8px; }
 
+/* ============ MODAL SUB-SECTIONS ============ */
+.modal-body p { 
+  margin-bottom: 12px; 
+}
+.modal-body ul { 
+  margin-bottom: 16px; 
+  padding-left: 20px; 
+}
+.modal-body li { 
+  margin-bottom: 6px; 
+  color: var(--text-secondary);
+}
+.modal-section-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-top: 24px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 4px;
+}
+.modal-section-title:first-child { 
+  margin-top: 0; 
+}
+
 @media (max-width: 768px) {
   .swipe-track .card,
   .swipe-card { flex-basis: 82vw; }

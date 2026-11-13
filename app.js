@@ -22,8 +22,6 @@ const pageTabs = {
   ],
   experience: [
     { id: 'timeline', label: 'Timeline' },
-    { id: 'company-a', label: 'Data Analyst — Company A' },
-    { id: 'company-b', label: 'Junior Analyst — Company B' },
     { id: 'achievements', label: 'Achievements' }
   ],
   projects: [
@@ -122,8 +120,15 @@ function attachModalListeners() {
 
   document.querySelectorAll('[data-modal]').forEach(card => {
     card.addEventListener('click', () => {
-      document.getElementById('modal-title').textContent = card.dataset.modalTitle || 'Detail';
-      document.getElementById('modal-body').innerHTML = card.dataset.modalBody || '';
+      const tmpl = card.querySelector('.card-detail-template');
+      let body = '';
+      if (tmpl) {
+        body = tmpl.innerHTML;
+      } else {
+        body = card.dataset.modalBody || '';
+      }
+      document.getElementById('modal-title').innerHTML = (card.dataset.modalTitle || 'Detail').replace(/\|/g, '<br>');
+      document.getElementById('modal-body').innerHTML = body;
       backdrop.classList.add('active');
     });
   });
