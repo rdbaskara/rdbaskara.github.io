@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rindi Baskara Ujianto — Data Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP NAV -->
+    <nav class="topnav">
+     <a href="#home" class="brand">rdbaskara</a>
+     <ul class="nav-links">
+        <li><a href="#home" data-page="home" class="active">Home</a></li>
+        <li><a href="#about" data-page="about">About</a></li>
+        <li><a href="#experience" data-page="experience">Experience</a></li>
+        <li><a href="#projects" data-page="projects">Projects</a></li>
+        <li><a href="#contact" data-page="contact">Contact</a></li>
+     </ul>
+     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+     <a href="#" class="btn-cv">Download CV</a>
+    </nav>
+
+  <div class="layout">
+
+    <!-- LEFT RAIL (dynamic) -->
+    <aside class="rail" id="rail">
+        <button class="rail-toggle" id="rail-toggle" aria-label="Toggle sidebar" title="Toggle sidebar">
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+        </button>
+    <nav class="rail-items" id="rail-items"></nav>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <!-- ============ HOME ============ -->
+      <section class="page active" data-page="home">
+
+        <article class="panel active" data-tab="overview">
+          <h1 class="panel-title">Overview</h1>
+          <div class="hero">
+            <div>
+              <h2 class="display">Halo, saya<br>Rindi Baskara Ujianto</h2>
+              <p class="role">DATA ANALYST</p>
+              <p class="tagline">Mengubah data menjadi keputusan yang lebih baik. Fokus pada analisis, visualisasi, dan insight yang actionable.</p>
+              <div class="cta-row">
+                <button class="btn btn-primary" data-goto-page="projects">View Projects</button>
+                <button class="btn btn-ghost">Download CV</button>
+              </div>
+            </div>
+            <div class="hero-avatar">RB</div>
+          </div>
+          <div class="stats">
+            <div class="stat"><span class="stat-num accent-yellow">3+</span><span class="stat-label">Years Exp</span></div>
+            <div class="stat"><span class="stat-num">12</span><span class="stat-label">Projects</span></div>
+            <div class="stat"><span class="stat-num">8</span><span class="stat-label">Tools</span></div>
+            <div class="stat"><span class="stat-num">5</span><span class="stat-label">Certifications</span></div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="highlights">
+          <h1 class="panel-title">Highlights</h1>
+          <p class="muted">Section highlights akan diisi kemudian.</p>
+        </article>
+
+        <article class="panel" data-tab="featured">
+          <h1 class="panel-title">Featured Projects</h1>
+          <div class="grid">
+            <div class="card" data-modal data-modal-title="Sales Dashboard" data-modal-body="<p>Dashboard penjualan interaktif menggunakan Tableau. Menampilkan KPI bulanan, tren penjualan per region, dan breakdown per produk.</p><p><strong>Tools:</strong> Tableau, SQL, Excel</p><p><strong>Impact:</strong> Memangkas waktu reporting dari 4 jam menjadi 15 menit per minggu.</p>">
+              <div class="card-title">Sales Dashboard</div>
+              <div class="card-meta">Tableau · SQL</div>
+              <div class="card-metric">▲ 40% faster reporting</div>
+            </div>
+            <div class="card" data-modal data-modal-title="Customer Churn Prediction" data-modal-body="<p>Model prediksi churn pelanggan dengan akurasi 87% menggunakan Python dan scikit-learn.</p><p><strong>Tools:</strong> Python, pandas, scikit-learn</p><p><strong>Impact:</strong> Mengidentifikasi 200+ pelanggan berisiko dalam 1 kuartal.</p>">
+              <div class="card-title">Customer Churn</div>
+              <div class="card-meta">Python · scikit-learn</div>
+              <div class="card-metric">▲ 87% accuracy</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="whatido">
+          <h1 class="panel-title">What I Do</h1>
+          <div class="grid">
+            <div class="card">
+              <div class="card-title">Data Cleaning</div>
+              <div class="card-meta">Mengubah data mentah menjadi dataset siap analisis</div>
+            </div>
+            <div class="card">
+              <div class="card-title">Dashboarding</div>
+              <div class="card-meta">Membangun visualisasi yang mudah dipahami stakeholder</div>
+            </div>
+            <div class="card">
+              <div class="card-title">Insight Generation</div>
+              <div class="card-meta">Menerjemahkan data menjadi rekomendasi bisnis</div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ============ ABOUT ============ -->
+      <section class="page" data-page="about">
+
+        <article class="panel active" data-tab="profile">
+          <h1 class="panel-title">Profile</h1>
+          <div class="bio-row">
+            <div class="avatar-lg">RB</div>
+            <div>
+              <p>Halo! Saya Rindi Baskara Ujianto, seorang Data Analyst dengan pengalaman 3+ tahun di bidang analisis data, dashboarding, dan predictive modeling.</p>
+              <p class="muted" style="margin-top:12px;">📍 Jakarta, Indonesia · 🟢 Open to work</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="education">
+          <h1 class="panel-title">Education</h1>
+          <div class="timeline">
+            <div class="role-item">
+              <div class="role-title">S1 Statistika</div>
+              <div class="role-company">Universitas Indonesia</div>
+              <div class="role-period">2016 — 2020</div>
+            </div>
+            <div class="role-item">
+              <div class="role-title">Google Data Analytics Certificate</div>
+              <div class="role-company">Coursera</div>
+              <div class="role-period">2022</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="skills">
+          <h1 class="panel-title">Skills</h1>
+          <div class="chip-group-title">Languages</div>
+          <div><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span></div>
+          <div class="chip-group-title">Tools</div>
+          <div><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Looker</span><span class="chip">Excel</span><span class="chip">dbt</span></div>
+          <div class="chip-group-title">Libraries</div>
+          <div><span class="chip">pandas</span><span class="chip">scikit-learn</span><span class="chip">matplotlib</span><span class="chip">seaborn</span></div>
+        </article>
+
+        <article class="panel" data-tab="quotes">
+          <h1 class="panel-title">Quotes</h1>
+          <div class="quote">
+            <p class="quote-text">"Data bukan sekadar angka — ia adalah cerita yang menunggu untuk dibaca dengan tepat."</p>
+            <p class="quote-attr">— Filosofi kerja saya</p>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ============ EXPERIENCE ============ -->
+      <section class="page" data-page="experience">
+
+        <article class="panel active" data-tab="timeline">
+          <h1 class="panel-title">Timeline</h1>
+          <div class="timeline">
+            <div class="role-item">
+              <div class="role-title">Data Analyst</div>
+              <div class="role-company">Company A</div>
+              <div class="role-period">2022 — Present</div>
+            </div>
+            <div class="role-item">
+              <div class="role-title">Junior Analyst</div>
+              <div class="role-company">Company B</div>
+              <div class="role-period">2020 — 2022</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="company-a">
+          <h1 class="panel-title">Data Analyst — Company A</h1>
+          <div class="timeline">
+            <div class="role-item">
+              <div class="role-title">Tanggung Jawab</div>
+              <p class="muted" style="margin-top:8px;">Membangun dashboard mingguan untuk tim sales & marketing; melakukan A/B testing pada kampanye digital.</p>
+            </div>
+            <div class="role-item">
+              <div class="role-title">Impact</div>
+              <p style="margin-top:8px;"><span class="card-metric">▲ 40%</span> waktu reporting lebih cepat</p>
+              <p style="margin-top:4px;"><span class="card-metric">▲ 12%</span> peningkatan conversion rate</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="company-b">
+          <h1 class="panel-title">Junior Analyst — Company B</h1>
+          <div class="timeline">
+            <div class="role-item">
+              <div class="role-title">Tanggung Jawab</div>
+              <p class="muted" style="margin-top:8px;">Data cleaning dan ad-hoc analysis untuk tim operasional.</p>
+            </div>
+            <div class="role-item">
+              <div class="role-title">Impact</div>
+              <p style="margin-top:8px;"><span class="card-metric">▲ 25%</span> pengurangan error pada data entry</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="achievements">
+          <h1 class="panel-title">Achievements</h1>
+          <div class="stats">
+            <div class="stat"><span class="stat-num accent-yellow">40%</span><span class="stat-label">Faster Reporting</span></div>
+            <div class="stat"><span class="stat-num">12%</span><span class="stat-label">Conversion Lift</span></div>
+            <div class="stat"><span class="stat-num">25%</span><span class="stat-label">Less Errors</span></div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section class="page" data-page="projects">
+
+        <article class="panel active" data-tab="all">
+          <h1 class="panel-title">All Projects</h1>
+          <div class="grid">
+            <div class="card" data-modal data-modal-title="Sales Dashboard" data-modal-body="<p>Dashboard penjualan interaktif di Tableau. Menampilkan KPI bulanan dan breakdown per region.</p><p><strong>Impact:</strong> 40% faster reporting.</p>">
+              <div class="card-title">Sales Dashboard</div>
+              <div class="card-meta">Tableau · SQL</div>
+              <div class="card-metric">▲ 40% faster</div>
+            </div>
+            <div class="card" data-modal data-modal-title="Churn Prediction" data-modal-body="<p>Model ML untuk prediksi churn pelanggan dengan akurasi 87%.</p><p><strong>Tools:</strong> Python, scikit-learn</p>">
+              <div class="card-title">Churn Prediction</div>
+              <div class="card-meta">Python · scikit-learn</div>
+              <div class="card-metric">▲ 87% accuracy</div>
+            </div>
+            <div class="card" data-modal data-modal-title="SQL Cohort Analysis" data-modal-body="<p>Analisis retensi pelanggan dengan SQL murni.</p>">
+              <div class="card-title">Cohort Analysis</div>
+              <div class="card-meta">SQL</div>
+              <div class="card-metric">▲ 30% insight</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="sql">
+          <h1 class="panel-title">SQL Projects</h1>
+          <div class="grid">
+            <div class="card">
+              <div class="card-title">Cohort Analysis</div>
+              <div class="card-meta">SQL</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="python">
+          <h1 class="panel-title">Python / ML Projects</h1>
+          <div class="grid">
+            <div class="card">
+              <div class="card-title">Churn Prediction</div>
+              <div class="card-meta">Python · scikit-learn</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="dashboard">
+          <h1 class="panel-title">Dashboard Projects</h1>
+          <div class="grid">
+            <div class="card">
+              <div class="card-title">Sales Dashboard</div>
+              <div class="card-meta">Tableau · SQL</div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="page" data-page="contact">
+
+        <article class="panel active" data-tab="get-in-touch">
+          <h1 class="panel-title">Get in Touch</h1>
+          <div class="contact-hero">
+            <p style="font-size:18px; color: var(--text-secondary);">Let's Connect...</p>
+            <a href="mailto:baskara.ur@gmail.com" class="contact-email">baskara.ur@gmail.com</a>
+            <p class="contact-info">📍 Jakarta, Indonesia (GMT+7)</p>
+          </div>
+          <div class="cta-row">
+            <a href="mailto:hello@rdbaskara.dev" class="btn btn-primary" style="text-decoration:none;">Kirim Email</a>
+            <a href="#" class="btn btn-ghost" style="text-decoration:none;">Jadwalkan Call</a>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="social">
+          <h1 class="panel-title">Social</h1>
+          <div class="social-list">
+            <a href="https://linkedin.com/in/rdbaskara" class="social-link" target="_blank" rel="noopener">
+              <span class="social-icon">in</span>
+              <span>LinkedIn — /in/rdbaskara</span>
+            </a>
+            <a href="https://github.com/rdbaskara" class="social-link" target="_blank" rel="noopener">
+              <span class="social-icon">&lt;/&gt;</span>
+              <span>GitHub — @rdbaskara</span>
+            </a>
+            <a href="https://kaggle.com/rdbaskara" class="social-link" target="_blank" rel="noopener">
+              <span class="social-icon">Kg</span>
+              <span>Kaggle — @rdbaskara</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="availability">
+          <h1 class="panel-title">Availability</h1>
+          <div class="quote">
+            <p class="quote-text" style="font-style:normal; font-size:16px; color: var(--text-primary);">🟢 Open to work — Full-time & Freelance</p>
+            <p class="quote-attr" style="margin-top:16px;">Tipe project yang dicari:</p>
+            <ul style="margin-top:8px; margin-left:20px; color: var(--text-secondary);">
+              <li>Dashboarding & reporting</li>
+              <li>Data cleaning & pipeline</li>
+              <li>Predictive modeling</li>
+              <li>Analytics consulting</li>
+            </ul>
+            <p class="quote-attr" style="margin-top:16px;">⏱ Response time: 1×24 jam</p>
+          </div>
+        </article>
+
+        <article class="panel" data-tab="send-message">
+          <h1 class="panel-title">Send Message</h1>
+          <p class="muted" style="margin-bottom:16px;">Klik tombol di bawah untuk membuka aplikasi email kamu (mailto).</p>
+          <a href="mailto:hello@rdbaskara.dev?subject=Halo%20Raditya" class="btn btn-primary" style="text-decoration:none;">Buka Aplikasi Email</a>
+        </article>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Detail</h3>
+        <button class="modal-close" id="modal-close">×</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
