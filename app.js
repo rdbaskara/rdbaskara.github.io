@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   attachModalListeners();
   attachThemeToggle();
   attachRailToggle();
+  attachSwipeGallery();
 });
 
 // Render tombol sub-tab di left rail
@@ -79,6 +80,7 @@ function activateTab(page, tabId) {
     p.classList.toggle('active', p.dataset.tab === tabId);
   });
   window.location.hash = `${page}/${tabId}`;
+  setTimeout(attachSwipeGallery, 50);
 }
 
 // Pindah halaman (top nav)
@@ -170,5 +172,61 @@ function attachRailToggle() {
     rail.classList.toggle('collapsed');
     const isCollapsed = rail.classList.contains('collapsed');
     localStorage.setItem('rail-collapsed', isCollapsed);
+  });
+}
+
+function attachSwipeGallery() {
+  document.querySelectorAll('[data-gallery]').forEach(gallery => {
+    const track = gallery.querySelector('.swipe-track');
+    const dotsContainer = gallery.querySelector('.swipe-dots');
+    if (!track || !dotsContainer) return;
+
+    const cards = track.querySelectorAll('.swipe-card');
+    if (!cards.length) return;
+
+    // Rebuild dots setiap kali (aman kalau tab switch)
+    dotsContainer.innerHTML = '';
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'swipe-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Ke slide ${i + 1}`);
+      dot.addEventListener('click', () => {
+        cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    // Bind scroll & arrows hanya sekali per gallery
+    if (gallery.dataset.scrollBound === 'true') return;
+    gallery.dataset.scrollBound = 'true';
+
+    const gap = 16;
+    const getCardWidth = () => cards[0].offsetWidth + gap;
+
+    track.addEventListener('scroll', () => {
+      const w = getCardWidth();
+      if (w <= gap) return;
+      const idx = Math.round(track.scrollLeft / w);
+      dotsContainer.querySelectorAll('.swipe-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === idx);
+      });
+    });
+
+    const prevBtn = gallery.querySelector('.swipe-arrow.prev');
+    const nextBtn = gallery.querySelector('.swipe-arrow.next');
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => {
+        const idx = Math.round(track.scrollLeft / getCardWidth());
+        if (idx > 0) {
+          cards[idx - 1].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        }
+      });
+      nextBtn.addEventListener('click', () => {
+        const idx = Math.round(track.scrollLeft / getCardWidth());
+        if (idx < cards.length - 1) {
+          cards[idx + 1].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        }
+      });
+    }
   });
 }
