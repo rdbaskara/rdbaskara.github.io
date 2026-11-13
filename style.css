@@ -786,3 +786,12 @@ body { display: flex; flex-direction: column; }
   .swipe-card { flex-basis: 82vw; }
   .swipe-arrow { display: none; }
 }
+
+/* ============ FOTO PROFIL ============ */
+.hero-avatar img,
+.avatar-lg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Memastikan foto tidak gepeng dan pas di tengah */
+  border-radius: 50%; /* Membuat foto menjadi bulat */
+}
