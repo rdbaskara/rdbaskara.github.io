@@ -8,7 +8,7 @@ import { SectionTransition } from "@/components/ui/SectionTransition";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
 import { highlights, services, siteConfig } from "@/lib/site-config";
-import { ProjectsSection } from "@/components/workspace/ProjectsSection";
+import ProjectsSection from "@/components/workspace/ProjectsSection";
 import { ExperienceSection } from "@/components/workspace/ExperienceSection";
 import { SkillsSection } from "@/components/workspace/SkillsSection";
 import { ContactSection } from "@/components/workspace/ContactSection";

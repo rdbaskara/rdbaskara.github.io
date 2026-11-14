@@ -1,5 +1,5 @@
 import { Container } from "@/components/layout/Container";
-import { ProjectsSection } from "@/components/workspace/ProjectsSection";
+import ProjectsSection from "@/components/workspace/ProjectsSection";
 import { TopBar } from "@/components/workspace/TopBar";
 import { StatusBar } from "@/components/workspace/StatusBar";
 

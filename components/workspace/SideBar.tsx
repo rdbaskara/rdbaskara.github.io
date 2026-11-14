@@ -11,8 +11,8 @@ const statuses = [
 ];
 
 type SideBarProps = {
-  activeCategory: string;
-  onCategoryChange: (category: string) => void;
+  activeCategory?: string;
+  onCategoryChange?: (category: string) => void;
 };
 
 export function SideBar({
@@ -46,7 +46,7 @@ export function SideBar({
   }, []);
 
   const handleCategoryChange = (category: string) => {
-    onCategoryChange(category);
+    onCategoryChange?.(category);
 
     document
       .getElementById("projects")

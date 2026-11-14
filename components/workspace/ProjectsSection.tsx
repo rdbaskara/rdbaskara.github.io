@@ -8,10 +8,12 @@ import { projects } from "@/lib/site-config";
 const statuses = ["All Status", "Completed", "Ongoing", "Live"];
 
 type ProjectsSectionProps = {
-  activeCategory: string;
+  activeCategory?: string;
 };
 
-export function ProjectsSection({ activeCategory }: ProjectsSectionProps) {
+export default function ProjectsSection({
+  activeCategory = "",
+}: ProjectsSectionProps) {
   const [activeStatus, setActiveStatus] = useState("All Status");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
