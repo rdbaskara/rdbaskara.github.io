@@ -1,0 +1,52 @@
+{
+  "id": "revo-hospital-growth",
+  "title": "Revo Hospital Growth Strategy: Unlocking Capacity & Reaching +10% Revenue Target",
+  "category": ["Data Analytics", "Dashboard"],
+  "tags": ["Tableau", "Excel", "Healthcare Analytics", "Capacity Planning"],
+  "status": "Completed",
+  "year": 2026,
+  "role": "Data Analyst",
+  "summary": "Analysis of hospital capacity constraints and financial performance to identify opportunities for revenue growth.",
+  "problem": "Revo Hospital experienced a significant surge in patient numbers beginning in December 2024, creating capacity constraints and income disparities.",
+  "goal": [
+    "Identify primary operational and financial bottlenecks",
+    "Increase net revenue by 10% over six months",
+    "Optimize capacity rebalancing and cash conversion"
+  ],
+  "methodology": [
+    "Data preparation",
+    "Exploratory data analysis",
+    "Patient flow analysis",
+    "Financial performance analysis",
+    "Development of six Tableau dashboards"
+  ],
+  "keyFindings": [
+    "Oncology recorded the highest ALOS at 6.98 days",
+    "Cirebon had the highest pending payment ratio at 17.73%",
+    "Central Jakarta generated lower revenue per bed than other flagship branches"
+  ],
+  "recommendations": [
+    "Review bed allocation between flagship branches",
+    "Improve revenue productivity through pricing and payer mix optimization",
+    "Expand East Java referral partnerships"
+  ],
+  "metrics": [
+    "+10% target net revenue",
+    "Rp9.89B projected revenue increase",
+    "Revenue target from Rp98.87B to Rp108.76B"
+  ],
+  "techStack": ["Tableau", "Excel", "Google Slides"],
+  "coverImage": "/images/projects/revo-hospital-cover.png",
+  "gallery": [],
+  "tableau": {
+    "enabled": false
+  },
+  "code": {
+    "enabled": false
+  },
+  "links": {
+    "github": "",
+    "liveDemo": "",
+    "article": ""
+  }
+}
