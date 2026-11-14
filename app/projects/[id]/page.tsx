@@ -14,6 +14,12 @@ type ProjectDetailPageProps = {
   }>;
 };
 
+export function generateStaticParams() {
+  return projects.map((project) => ({
+    id: project.id,
+  }));
+}
+
 export default async function ProjectDetailPage({
   params,
 }: ProjectDetailPageProps) {
