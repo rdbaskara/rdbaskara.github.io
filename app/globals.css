@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-primary: var(--primary);
+  --color-cyan: var(--accent-cyan);
+  --color-yellow: var(--accent-yellow);
+
+  --font-display: var(--font-display), sans-serif;
+  --font-sans: var(--font-sans), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+:root {
+  --background: #f6f8fc;
+  --surface: #ffffff;
+  --surface-muted: #eef2f9;
+  --border: #dde3ee;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --primary: #1d4ed8;
+  --accent-cyan: #0891b2;
+  --accent-yellow: #ca8a04;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+.dark {
+  --background: #0a1128;
+  --surface: #101a33;
+  --surface-muted: #16223f;
+  --border: #1e2a4a;
+  --text-primary: #e6edf7;
+  --text-secondary: #94a3b8;
+  --primary: #2563eb;
+  --accent-cyan: #22d3ee;
+  --accent-yellow: #facc15;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--accent-cyan);
+  color: #0a1128;
+}

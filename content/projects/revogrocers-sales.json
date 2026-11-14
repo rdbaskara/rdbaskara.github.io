@@ -1,0 +1,53 @@
+{
+  "id": "revogrocers-sales",
+  "title": "RevoGrocers: Sales Performance Analysis",
+  "category": ["Data Analytics", "SQL"],
+  "tags": ["SQL", "BigQuery", "Retail Analytics", "Customer Behaviour"],
+  "status": "Completed",
+  "year": 2026,
+  "role": "Data Analyst",
+  "summary": "SQL-based analysis of category performance and customer repeat-purchase behaviour to support revenue growth.",
+  "problem": "RevoGrocers needed to identify underperforming categories and opportunities to achieve a 10% revenue growth target.",
+  "goal": [
+    "Assess category performance",
+    "Identify underperforming categories",
+    "Recommend data-driven actions aligned with revenue growth"
+  ],
+  "methodology": [
+    "Data preparation",
+    "Exploratory data analysis",
+    "Multi-table data integration",
+    "Customer purchase behaviour analysis",
+    "Financial performance analysis"
+  ],
+  "keyFindings": [
+    "Confection, Meat, and Poultry generated 34.5% of total revenue",
+    "Seafood, Grain, and Shellfish contributed only 22.0% combined",
+    "Grain recorded the highest average price but the lowest repeat purchase rate"
+  ],
+  "recommendations": [
+    "Implement cross-category bundling",
+    "Test volume-based promotions for Grain",
+    "Introduce targeted cross-selling for Seafood and Shellfish",
+    "Determine free shipping thresholds based on order value distribution"
+  ],
+  "metrics": [
+    "+10% revenue growth target",
+    "34.5% revenue from top categories",
+    "22.0% revenue from underperforming categories"
+  ],
+  "techStack": ["SQL", "Google BigQuery", "Excel", "Google Slides"],
+  "coverImage": "/images/projects/revogrocers-cover.png",
+  "gallery": [],
+  "tableau": {
+    "enabled": false
+  },
+  "code": {
+    "enabled": false
+  },
+  "links": {
+    "github": "",
+    "liveDemo": "",
+    "article": ""
+  }
+}

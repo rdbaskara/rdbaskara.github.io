@@ -1,0 +1,53 @@
+{
+  "id": "supply-chain-optimization",
+  "title": "Supply Chain Optimization: Profit Leakage & Delivery Performance Analysis",
+  "category": ["Data Analytics", "Dashboard", "Python-ML", "Supply Chain"],
+  "tags": ["Python", "Tableau", "Excel", "XGBoost", "RFM"],
+  "status": "Completed",
+  "year": 2026,
+  "role": "Data Analyst",
+  "summary": "Analysis of profit leakage and delivery performance to identify revenue recovery opportunities and improve fulfilment performance.",
+  "problem": "DataCo Global faced significant profit losses and delays in order fulfilment.",
+  "goal": [
+    "Recover approximately $806K through discount optimization",
+    "Reduce late delivery rate from 57.3% to 42.8%",
+    "Improve fulfilment performance through conditional same-day delivery and 3PL SLA enforcement"
+  ],
+  "methodology": [
+    "Data preparation",
+    "Exploratory data analysis",
+    "RFM customer segmentation",
+    "XGBoost modelling",
+    "Sensitivity and scenario simulation",
+    "Development of five Tableau dashboards"
+  ],
+  "keyFindings": [
+    "$1.81M estimated profit leakage exposure",
+    "82.2% of losses concentrated in Fan Shop, Apparel, and Golf",
+    "57.3% of orders experienced late delivery, particularly in Europe and LATAM"
+  ],
+  "recommendations": [
+    "Cap discounts at 15% with A/B testing",
+    "Renegotiate 3PL carrier penalty clauses",
+    "Reallocate discount savings to fund conditional same-day delivery"
+  ],
+  "metrics": [
+    "+$828K projected revenue",
+    "+5.8% revenue growth",
+    "Late delivery reduction from 57.3% to 42.8%"
+  ],
+  "techStack": ["Python", "Tableau", "Excel", "Google Slides"],
+  "coverImage": "/images/projects/supply-chain-cover.png",
+  "gallery": [],
+  "tableau": {
+    "enabled": false
+  },
+  "code": {
+    "enabled": false
+  },
+  "links": {
+    "github": "",
+    "liveDemo": "",
+    "article": ""
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "revobank-credit-card",
+  "title": "RevoBank: Credit Card Performance & Customer Segmentation",
+  "category": ["Data Analytics", "Python-ML"],
+  "tags": ["Python", "Customer Segmentation", "Financial Analysis", "Risk Analysis"],
+  "status": "Completed",
+  "year": 2026,
+  "role": "Data Analyst",
+  "summary": "Customer segmentation and credit card performance analysis to identify growth opportunities and manage financial risk.",
+  "problem": "RevoBank needed to increase credit card engagement and MDR revenue while minimizing fraud-related losses.",
+  "goal": [
+    "Identify transaction patterns and customer inactivity",
+    "Segment customers based on transaction behaviour and financial profiles",
+    "Evaluate fraud exposure and customer debt levels"
+  ],
+  "methodology": [
+    "Data preparation",
+    "Exploratory data analysis",
+    "Customer-level integration",
+    "Customer segmentation",
+    "Financial performance analysis"
+  ],
+  "keyFindings": [
+    "Estimated MDR contribution after reported fraud losses reached Rp5.66B",
+    "Fraud represented 0.10% of transaction count and 0.26% of transaction value",
+    "VIP customers represented 17.20% of the customer base",
+    "Dormant customers represented 38.48% of the customer base"
+  ],
+  "recommendations": [
+    "Implement tiered loyalty programs and personalized offers",
+    "Launch targeted win-back campaigns for dormant customers",
+    "Implement risk-based credit limit reviews",
+    "Strengthen transaction monitoring and step-up authentication"
+  ],
+  "metrics": [
+    "Rp7.11M VIP net profit per customer",
+    "17.20% VIP customer segment",
+    "Rp5.66B estimated MDR contribution"
+  ],
+  "techStack": ["Python", "Excel", "Google Slides"],
+  "coverImage": "/images/projects/revobank-cover.png",
+  "gallery": [],
+  "tableau": {
+    "enabled": false
+  },
+  "code": {
+    "enabled": false
+  },
+  "links": {
+    "github": "",
+    "liveDemo": "",
+    "article": ""
+  }
+}
