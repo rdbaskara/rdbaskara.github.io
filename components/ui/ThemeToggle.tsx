@@ -9,10 +9,10 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      aria-label="Toggle color theme"
-      className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border bg-surface text-text-primary transition-colors duration-200 hover:border-cyan"
+      aria-label="Toggle theme"
+      className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
     >
-      {theme === "dark" ? "☀️" : "🌙"}
+      {theme === "dark" ? "☀" : "☾"}
     </button>
   );
 }
