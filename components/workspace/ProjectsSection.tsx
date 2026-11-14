@@ -5,19 +5,13 @@ import { ProjectCard } from "@/components/workspace/ProjectCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projects } from "@/lib/site-config";
 
-const categories = [
-  "All Projects",
-  "Data Analytics",
-  "Dashboard",
-  "Python-ML",
-  "SQL",
-  "Supply Chain",
-];
-
 const statuses = ["All Status", "Completed", "Ongoing", "Live"];
 
-export function ProjectsSection() {
-  const [activeCategory, setActiveCategory] = useState("All Projects");
+type ProjectsSectionProps = {
+  activeCategory: string;
+};
+
+export function ProjectsSection({ activeCategory }: ProjectsSectionProps) {
   const [activeStatus, setActiveStatus] = useState("All Status");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
@@ -35,7 +29,7 @@ export function ProjectsSection() {
   }, [activeCategory, activeStatus]);
 
   return (
-    <section id="projects" className="mb-12 md:mb-16">
+    <section id="projects" className="mb-12 scroll-mt-20 md:mb-16">
       <SectionHeading
         eyebrow="Projects"
         title="Selected work"
@@ -68,29 +62,6 @@ export function ProjectsSection() {
             isFilterOpen ? "block" : "hidden"
           } md:block`}
         >
-          <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-text-secondary">
-              Category
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  type="button"
-                  onClick={() => setActiveCategory(category)}
-                  className={`rounded-full border px-3 py-2 text-xs transition-colors duration-200 md:px-4 md:text-sm ${
-                    activeCategory === category
-                      ? "border-cyan bg-primary/10 text-cyan"
-                      : "border-border text-text-secondary hover:border-cyan hover:text-cyan"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-text-secondary">
               Status
