@@ -7,8 +7,6 @@ import { StatusBar } from "@/components/workspace/StatusBar";
 import CodePreview from "@/components/projects/CodePreview";
 import { projects } from "@/lib/site-config";
 
-export const instant = false;
-
 type ProjectDetailPageProps = {
   params: Promise<{
     id: string;
