@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+<<<<<<< HEAD
+=======
+import { CursorGlow } from "@/components/ui/CursorGlow";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
 import "./globals.css";
 
 const display = Space_Grotesk({
@@ -34,6 +39,11 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
       >
+<<<<<<< HEAD
+=======
+        <ScrollProgress />
+        <CursorGlow />
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+<<<<<<< HEAD
 
 const navigation = [
   { label: "Overview", href: "/" },
@@ -11,10 +12,24 @@ const navigation = [
   { label: "Skills", href: "/skills" },
   { label: "Contact", href: "/contact" },
 ];
+=======
+import { navigation } from "@/lib/site-config";
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
 
 export function TopBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+<<<<<<< HEAD
+=======
+  const scrollToTop = () => {
+    const main = document.querySelector("main");
+
+    if (main) {
+      main.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <div className="flex h-16 items-center justify-between px-6">
@@ -33,6 +48,14 @@ export function TopBar() {
             <Link
               key={item.href}
               href={item.href}
+<<<<<<< HEAD
+=======
+              onClick={() => {
+                if (item.href === "#overview") {
+                  scrollToTop();
+                }
+              }}
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
               className="rounded-md px-3 py-2 text-sm text-text-secondary transition-colors duration-200 hover:bg-surface-muted hover:text-text-primary"
             >
               {item.label}
@@ -61,7 +84,17 @@ export function TopBar() {
               <Link
                 key={item.href}
                 href={item.href}
+<<<<<<< HEAD
                 onClick={() => setIsMenuOpen(false)}
+=======
+                onClick={() => {
+                  setIsMenuOpen(false);
+
+                  if (item.href === "#overview") {
+                    scrollToTop();
+                  }
+                }}
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
                 className="block rounded-md px-3 py-2 text-sm text-text-secondary transition-colors duration-200 hover:bg-surface-muted hover:text-text-primary"
               >
                 {item.label}

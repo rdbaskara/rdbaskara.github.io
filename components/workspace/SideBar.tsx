@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< HEAD
 import { useState } from "react";
 import { Tag } from "@/components/ui/Tag";
 
@@ -11,6 +12,11 @@ const categories = [
   { label: "SQL", count: 1 },
   { label: "Supply Chain", count: 1 },
 ];
+=======
+import { useMemo, useState } from "react";
+import { Tag } from "@/components/ui/Tag";
+import { projects } from "@/lib/site-config";
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
 
 const statuses = [
   { label: "Completed", variant: "default" as const },
@@ -18,9 +24,54 @@ const statuses = [
   { label: "Live", variant: "cyan" as const },
 ];
 
+<<<<<<< HEAD
 export function SideBar() {
   const [isOpen, setIsOpen] = useState(true);
   const [activeCategory, setActiveCategory] = useState("All Projects");
+=======
+type SideBarProps = {
+  activeCategory?: string;
+  onCategoryChange?: (category: string) => void;
+};
+
+export function SideBar({
+  activeCategory,
+  onCategoryChange,
+}: SideBarProps) {
+  const [isOpen, setIsOpen] = useState(true);
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+  const categories = useMemo(() => {
+    const categoryCounts = projects.reduce<Record<string, number>>(
+      (accumulator, project) => {
+        accumulator[project.category] =
+          (accumulator[project.category] || 0) + 1;
+
+        return accumulator;
+      },
+      {}
+    );
+
+    return [
+      {
+        label: "All Projects",
+        count: projects.length,
+      },
+      ...Object.entries(categoryCounts).map(([label, count]) => ({
+        label,
+        count,
+      })),
+    ];
+  }, []);
+
+  const handleCategoryChange = (category: string) => {
+    onCategoryChange?.(category);
+
+    document
+      .getElementById("projects")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
 
   return (
     <>
@@ -32,9 +83,21 @@ export function SideBar() {
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between border-b border-border p-4">
             {isOpen && (
+<<<<<<< HEAD
               <span className="font-display text-sm font-semibold text-text-primary">
                 Workspace
               </span>
+=======
+              <div>
+                <span className="font-display text-sm font-semibold text-text-primary">
+                  Project Explorer
+                </span>
+
+                <p className="mt-1 text-xs text-text-secondary">
+                  Filter projects and access portfolio tools
+                </p>
+              </div>
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
             )}
 
             <button
@@ -51,7 +114,11 @@ export function SideBar() {
             <div className="flex-1 space-y-6 overflow-y-auto p-4">
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-text-secondary">
+<<<<<<< HEAD
                   Categories
+=======
+                  Project Focus
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
                 </p>
 
                 <div className="space-y-1">
@@ -59,10 +126,17 @@ export function SideBar() {
                     <button
                       key={category.label}
                       type="button"
+<<<<<<< HEAD
                       onClick={() => setActiveCategory(category.label)}
                       className={`flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm transition-colors duration-200 ${
                         activeCategory === category.label
                           ? "bg-primary/10 text-cyan"
+=======
+                      onClick={() => handleCategoryChange(category.label)}
+                      className={`sidebar-item flex w-full items-center justify-between rounded-md px-3 py-2 pl-4 text-left text-sm transition-colors duration-200 ${
+                        activeCategory === category.label
+                          ? "sidebar-item is-active bg-primary/10 text-cyan"
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
                           : "text-text-secondary hover:bg-surface-muted hover:text-text-primary"
                       }`}
                     >
@@ -93,12 +167,22 @@ export function SideBar() {
               </div>
 
               <div className="space-y-2 border-t border-border pt-4">
+<<<<<<< HEAD
                 <button
                   type="button"
                   className="w-full rounded-md border border-border px-3 py-2 text-sm text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
                 >
                   New Project
                 </button>
+=======
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="block w-full rounded-md border border-border px-3 py-2 text-center text-sm text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
+                >
+                  Download CV
+                </a>
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
 
                 <button
                   type="button"
@@ -113,6 +197,7 @@ export function SideBar() {
       </aside>
 
       <div className="border-b border-border bg-surface px-4 py-3 lg:hidden">
+<<<<<<< HEAD
         <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-text-secondary">
           Quick Filters
         </p>
@@ -130,6 +215,43 @@ export function SideBar() {
               }`}
             >
               {category.label}
+=======
+        <div className="mb-2 flex items-center justify-between">
+          <p className="text-[10px] font-semibold uppercase tracking-widest text-text-secondary">
+            Project Focus
+          </p>
+
+          <button
+            type="button"
+            onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
+            className="rounded-md border border-border px-2 py-1 text-[10px] font-semibold text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
+          >
+            {isMobileFilterOpen ? "Hide" : "Show"}
+          </button>
+        </div>
+
+        <div
+          className={`flex-col gap-1.5 ${
+            isMobileFilterOpen ? "flex" : "hidden"
+          }`}
+        >
+          {categories.map((category) => (
+            <button
+              key={category.label}
+              type="button"
+              onClick={() => handleCategoryChange(category.label)}
+              className={`sidebar-item flex w-full items-center justify-between rounded-md px-3 py-2 pl-4 text-left text-xs transition-colors duration-200 ${
+                activeCategory === category.label
+                  ? "sidebar-item is-active bg-primary/10 text-cyan"
+                  : "text-text-secondary hover:bg-surface-muted hover:text-text-primary"
+              }`}
+            >
+              <span>{category.label}</span>
+
+              <span className="rounded-full bg-surface-muted px-2 py-0.5 text-[10px] text-text-secondary">
+                {category.count}
+              </span>
+>>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
             </button>
           ))}
         </div>
