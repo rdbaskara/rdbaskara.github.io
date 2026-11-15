@@ -2,25 +2,10 @@
 
 import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/workspace/ProjectCard";
+import { ProjectModal } from "@/components/workspace/ProjectModal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { projects } from "@/lib/site-config";
+import { projects, type Project } from "@/lib/site-config";
 
-<<<<<<< HEAD
-const categories = [
-  "All Projects",
-  "Data Analytics",
-  "Dashboard",
-  "Python-ML",
-  "SQL",
-  "Supply Chain",
-];
-
-const statuses = ["All Status", "Completed", "Ongoing", "Live"];
-
-export function ProjectsSection() {
-  const [activeCategory, setActiveCategory] = useState("All Projects");
-  const [activeStatus, setActiveStatus] = useState("All Status");
-=======
 const statuses = ["All Status", "Completed", "Ongoing", "Live"];
 
 type ProjectsSectionProps = {
@@ -32,7 +17,7 @@ export default function ProjectsSection({
 }: ProjectsSectionProps) {
   const [activeStatus, setActiveStatus] = useState("All Status");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
@@ -48,51 +33,13 @@ export default function ProjectsSection({
   }, [activeCategory, activeStatus]);
 
   return (
-<<<<<<< HEAD
-    <section id="projects" className="mb-12 md:mb-16">
-=======
     <section id="projects" className="mb-12 scroll-mt-20 md:mb-16">
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
       <SectionHeading
         eyebrow="Projects"
-        title="Selected work"
+        title="Independent Analytics"
         description="Data analytics, dashboard, and supply chain projects."
       />
 
-<<<<<<< HEAD
-      <div className="mb-4 flex flex-wrap gap-2">
-        {categories.map((category) => (
-          <button
-            key={category}
-            type="button"
-            onClick={() => setActiveCategory(category)}
-            className={`rounded-full border px-3 py-2 text-xs transition-colors duration-200 md:px-4 md:text-sm ${
-              activeCategory === category
-                ? "border-cyan bg-primary/10 text-cyan"
-                : "border-border text-text-secondary hover:border-cyan hover:text-cyan"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      <div className="mb-8 flex flex-wrap gap-2">
-        {statuses.map((status) => (
-          <button
-            key={status}
-            type="button"
-            onClick={() => setActiveStatus(status)}
-            className={`rounded-full border px-3 py-2 text-xs transition-colors duration-200 md:px-4 md:text-sm ${
-              activeStatus === status
-                ? "border-cyan bg-primary/10 text-cyan"
-                : "border-border text-text-secondary hover:border-cyan hover:text-cyan"
-            }`}
-          >
-            {status}
-          </button>
-        ))}
-=======
       <div className="mb-6 rounded-lg border border-border bg-surface p-4 md:p-6">
         <div className="flex items-center justify-between gap-3">
           <div>
@@ -142,25 +89,35 @@ export default function ProjectsSection({
             </div>
           </div>
         </div>
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:gap-8">
+        {filteredProjects.length === 0 && (
+          <div className="rounded-lg border border-dashed border-border bg-surface-muted p-8 text-center md:col-span-2">
+            <p className="font-display text-lg font-semibold text-text-primary">
+              No projects found
+            </p>
+
+            <p className="mt-2 text-sm text-text-secondary">
+              Try selecting a different category or status.
+            </p>
+          </div>
+        )}
+
         {filteredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard
+            key={project.id}
+            project={project}
+            onSelect={setSelectedProject}
+          />
         ))}
       </div>
 
-      {filteredProjects.length === 0 && (
-        <div className="rounded-lg border border-border bg-surface p-8 text-center">
-          <p className="font-display text-lg font-semibold text-text-primary">
-            No projects found
-          </p>
-
-          <p className="mt-2 text-sm text-text-secondary">
-            Try selecting a different category or status.
-          </p>
-        </div>
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
       )}
     </section>
   );

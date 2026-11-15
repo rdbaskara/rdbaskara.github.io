@@ -2,7 +2,12 @@
   "id": "revobank-credit-card",
   "title": "RevoBank: Credit Card Performance & Customer Segmentation",
   "category": ["Data Analytics", "Python-ML"],
-  "tags": ["Python", "Customer Segmentation", "Financial Analysis", "Risk Analysis"],
+  "tags": [
+    "Python",
+    "Customer Segmentation",
+    "Financial Analysis",
+    "Risk Analysis"
+  ],
   "status": "Completed",
   "year": 2026,
   "role": "Data Analyst",

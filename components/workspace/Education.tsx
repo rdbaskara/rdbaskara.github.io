@@ -3,7 +3,7 @@ import { education } from "@/lib/site-config";
 export function Education() {
   return (
     <div className="mt-10">
-      <p className="text-xs font-semibold uppercase tracking-widest text-text-secondary">
+      <p className="text-xs font-semibold uppercase tracking-widest text-cyan">
         Education
       </p>
 
@@ -11,7 +11,7 @@ export function Education() {
         {education.map((item) => (
           <div
             key={item.school}
-            className="interactive-card rounded-lg border border-border bg-surface p-4 md:p-6"
+            className="interactive-card rounded-lg border border-border bg-surface-muted p-4 md:p-6"
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
@@ -19,9 +19,7 @@ export function Education() {
                   {item.school}
                 </h3>
 
-                <p className="mt-1 text-sm text-cyan">
-                  {item.degree}
-                </p>
+                <p className="mt-1 text-sm text-cyan">{item.degree}</p>
 
                 <p className="mt-1 text-xs text-text-secondary md:text-sm">
                   {item.period} · {item.location}

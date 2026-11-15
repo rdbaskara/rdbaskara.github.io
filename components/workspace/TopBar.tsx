@@ -1,39 +1,37 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-<<<<<<< HEAD
-
-const navigation = [
-  { label: "Overview", href: "/" },
-  { label: "Projects", href: "/projects" },
-  { label: "Experience", href: "/experience" },
-  { label: "Skills", href: "/skills" },
-  { label: "Contact", href: "/contact" },
-];
-=======
 import { navigation } from "@/lib/site-config";
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
+import { useWorkspace } from "@/components/providers/WorkspaceProvider";
 
 export function TopBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { activeSection, setActiveSection } = useWorkspace();
 
-<<<<<<< HEAD
-=======
-  const scrollToTop = () => {
-    const main = document.querySelector("main");
+  const scrollToSection = (href: string) => {
+    const target = href.replace("#", "");
+    const element = document.getElementById(target);
 
-    if (main) {
-      main.scrollTo({ top: 0, behavior: "smooth" });
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
+
+    setActiveSection(target);
+    setIsMenuOpen(false);
   };
 
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <div className="flex h-16 items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-3">
+        <button
+          type="button"
+          onClick={() => scrollToSection("#overview")}
+          className="flex items-center gap-3"
+        >
           <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary font-display text-sm font-bold text-white">
             iB
           </span>
@@ -41,25 +39,22 @@ export function TopBar() {
           <span className="font-display text-sm font-semibold text-text-primary">
             Rindi Baskara
           </span>
-        </Link>
+        </button>
 
         <nav className="hidden items-center gap-1 md:flex">
           {navigation.map((item) => (
-            <Link
+            <button
               key={item.href}
-              href={item.href}
-<<<<<<< HEAD
-=======
-              onClick={() => {
-                if (item.href === "#overview") {
-                  scrollToTop();
-                }
-              }}
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
-              className="rounded-md px-3 py-2 text-sm text-text-secondary transition-colors duration-200 hover:bg-surface-muted hover:text-text-primary"
+              type="button"
+              onClick={() => scrollToSection(item.href)}
+              className={`rounded-md px-3 py-2 text-sm transition-colors duration-200 hover:bg-surface-muted hover:text-text-primary ${
+                activeSection === item.href.replace("#", "")
+                  ? "bg-primary/10 text-cyan"
+                  : "text-text-secondary"
+              }`}
             >
               {item.label}
-            </Link>
+            </button>
           ))}
         </nav>
 
@@ -81,24 +76,18 @@ export function TopBar() {
         <nav className="border-t border-border bg-surface px-6 py-4 md:hidden">
           <div className="space-y-1">
             {navigation.map((item) => (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
-<<<<<<< HEAD
-                onClick={() => setIsMenuOpen(false)}
-=======
-                onClick={() => {
-                  setIsMenuOpen(false);
-
-                  if (item.href === "#overview") {
-                    scrollToTop();
-                  }
-                }}
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
-                className="block rounded-md px-3 py-2 text-sm text-text-secondary transition-colors duration-200 hover:bg-surface-muted hover:text-text-primary"
+                type="button"
+                onClick={() => scrollToSection(item.href)}
+                className={`block w-full rounded-md px-3 py-2 text-left text-sm transition-colors duration-200 hover:bg-surface-muted hover:text-text-primary ${
+                  activeSection === item.href.replace("#", "")
+                    ? "bg-primary/10 text-cyan"
+                    : "text-text-secondary"
+                }`}
               >
                 {item.label}
-              </Link>
+              </button>
             ))}
           </div>
         </nav>

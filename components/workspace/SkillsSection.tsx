@@ -6,7 +6,7 @@ export function SkillsSection() {
     <section id="skills" className="mb-12 md:mb-16">
       <SectionHeading
         eyebrow="Skills"
-        title="Technical toolkit"
+        title="Technical Toolkit"
         description="Data analysis, supply chain operations, and workflow tools."
       />
 
@@ -14,7 +14,7 @@ export function SkillsSection() {
         {skillGroups.map((group) => (
           <div
             key={group.id}
-            className="rounded-lg border border-border bg-surface p-5 md:p-6"
+            className="interactive-card rounded-lg border border-border bg-surface p-5 md:p-6"
           >
             <h3 className="font-display text-lg font-semibold text-text-primary">
               {group.title}

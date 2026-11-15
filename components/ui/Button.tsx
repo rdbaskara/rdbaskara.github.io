@@ -29,11 +29,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-<<<<<<< HEAD
-      className={`inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none ${variants[variant]} ${sizes[size]} ${className}`}
-=======
       className={`interactive-button inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none ${variants[variant]} ${sizes[size]} ${className}`}
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
       {...props}
     >
       {children}

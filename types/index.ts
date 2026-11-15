@@ -1,11 +1,7 @@
 export type ProjectStatus = "Completed" | "Ongoing" | "Live";
 
 export type ProjectCategory =
-  | "Data Analytics"
-  | "Dashboard"
-  | "Python-ML"
-  | "SQL"
-  | "Supply Chain";
+  "Data Analytics" | "Dashboard" | "Python-ML" | "SQL" | "Supply Chain";
 
 export interface ProjectLink {
   github?: string;

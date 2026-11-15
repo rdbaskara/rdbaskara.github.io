@@ -12,11 +12,7 @@ const variants = {
 export function Tag({ label, variant = "default" }: TagProps) {
   return (
     <span
-<<<<<<< HEAD
-      className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium ${variants[variant]}`}
-=======
       className={`interactive-button inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium ${variants[variant]}`}
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
     >
       {label}
     </span>

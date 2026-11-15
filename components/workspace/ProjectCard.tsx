@@ -1,31 +1,16 @@
-import Link from "next/link";
+"use client";
+
 import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
-<<<<<<< HEAD
-=======
 import { TiltCard } from "@/components/ui/TiltCard";
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
-
-type Project = {
-  id: string;
-  title: string;
-  category: string;
-  status: string;
-  description: string;
-<<<<<<< HEAD
-=======
-  metric: string;
-  tools: string[];
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
-  tags: string[];
-  year: string;
-};
+import type { Project } from "@/lib/site-config";
 
 type ProjectCardProps = {
   project: Project;
+  onSelect: (project: Project) => void;
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, onSelect }: ProjectCardProps) {
   const statusVariant =
     project.status === "Live"
       ? "cyan"
@@ -34,49 +19,25 @@ export function ProjectCard({ project }: ProjectCardProps) {
         : "default";
 
   return (
-<<<<<<< HEAD
-    <Card className="group h-full">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="text-xs font-semibold uppercase tracking-widest text-text-secondary">
-          {project.category}
-        </span>
-
-        <Tag label={project.status} variant={statusVariant} />
-      </div>
-
-      <h3 className="mt-4 font-display text-lg font-semibold text-text-primary">
-        {project.title}
-      </h3>
-
-      <p className="mt-2 text-sm text-text-secondary">
-        {project.description}
-      </p>
-
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-full bg-surface-muted px-3 py-1 text-xs text-text-secondary"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
-        <span className="text-xs text-text-secondary">{project.year}</span>
-
-        <Link
-          href={`/projects/${project.id}`}
-          className="text-sm font-medium text-cyan transition-transform duration-200 group-hover:translate-x-1"
-        >
-          View case study →
-        </Link>
-      </div>
-    </Card>
-=======
     <TiltCard className="h-full">
       <Card className="group flex h-full flex-col">
+        {project.thumbnail ? (
+          <div className="relative mb-4 aspect-video overflow-hidden rounded-lg border border-border bg-surface-muted">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={project.thumbnail}
+              alt={project.title}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+        ) : (
+          <div className="mb-4 flex aspect-video items-center justify-center rounded-lg border border-dashed border-border bg-surface-muted">
+            <span className="text-xs font-semibold uppercase tracking-widest text-text-secondary">
+              Project preview
+            </span>
+          </div>
+        )}
+
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-xs font-semibold uppercase tracking-widest text-text-secondary">
             {project.category}
@@ -90,7 +51,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </h3>
 
         <p className="mt-2 text-sm text-text-secondary">
-          {project.description}
+          {project.summary}
         </p>
 
         <div className="mt-4 rounded-lg border border-border bg-surface-muted p-3">
@@ -125,17 +86,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <div className="mt-auto flex items-center justify-between border-t border-border pt-4">
-          <span className="text-xs text-text-secondary">{project.year}</span>
+          <span className="text-xs text-text-secondary">
+            {project.status}
+          </span>
 
-          <Link
-            href={`/projects/${project.id}`}
+          <button
+            type="button"
+            onClick={() => onSelect(project)}
             className="animated-link text-sm font-medium text-cyan transition-all duration-200 group-hover:translate-x-1 group-hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.45)]"
           >
             View case study →
-          </Link>
+          </button>
         </div>
       </Card>
     </TiltCard>
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
   );
 }

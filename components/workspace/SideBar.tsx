@@ -1,22 +1,9 @@
 "use client";
 
-<<<<<<< HEAD
-import { useState } from "react";
-import { Tag } from "@/components/ui/Tag";
-
-const categories = [
-  { label: "All Projects", count: 6 },
-  { label: "Data Analytics", count: 2 },
-  { label: "Dashboard", count: 1 },
-  { label: "Python-ML", count: 1 },
-  { label: "SQL", count: 1 },
-  { label: "Supply Chain", count: 1 },
-];
-=======
 import { useMemo, useState } from "react";
 import { Tag } from "@/components/ui/Tag";
 import { projects } from "@/lib/site-config";
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
+import { useWorkspace } from "@/components/providers/WorkspaceProvider";
 
 const statuses = [
   { label: "Completed", variant: "default" as const },
@@ -24,21 +11,13 @@ const statuses = [
   { label: "Live", variant: "cyan" as const },
 ];
 
-<<<<<<< HEAD
-export function SideBar() {
-  const [isOpen, setIsOpen] = useState(true);
-  const [activeCategory, setActiveCategory] = useState("All Projects");
-=======
 type SideBarProps = {
   activeCategory?: string;
   onCategoryChange?: (category: string) => void;
 };
 
-export function SideBar({
-  activeCategory,
-  onCategoryChange,
-}: SideBarProps) {
-  const [isOpen, setIsOpen] = useState(true);
+export function SideBar({ activeCategory, onCategoryChange }: SideBarProps) {
+  const { isSidebarVisible, toggleSidebar } = useWorkspace();
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   const categories = useMemo(() => {
@@ -49,7 +28,7 @@ export function SideBar({
 
         return accumulator;
       },
-      {}
+      {},
     );
 
     return [
@@ -57,10 +36,12 @@ export function SideBar({
         label: "All Projects",
         count: projects.length,
       },
-      ...Object.entries(categoryCounts).map(([label, count]) => ({
-        label,
-        count,
-      })),
+      ...Object.entries(categoryCounts)
+        .map(([label, count]) => ({
+          label,
+          count,
+        }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     ];
   }, []);
 
@@ -71,23 +52,17 @@ export function SideBar({
       .getElementById("projects")
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
 
   return (
     <>
       <aside
         className={`hidden shrink-0 border-r border-border bg-surface transition-all duration-300 lg:block ${
-          isOpen ? "w-72" : "w-16"
+          isSidebarVisible ? "w-72" : "w-16"
         }`}
       >
         <div className="flex h-full flex-col">
           <div className="flex items-center justify-between border-b border-border p-4">
-            {isOpen && (
-<<<<<<< HEAD
-              <span className="font-display text-sm font-semibold text-text-primary">
-                Workspace
-              </span>
-=======
+            {isSidebarVisible && (
               <div>
                 <span className="font-display text-sm font-semibold text-text-primary">
                   Project Explorer
@@ -97,28 +72,23 @@ export function SideBar({
                   Filter projects and access portfolio tools
                 </p>
               </div>
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
             )}
 
             <button
               type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Hide sidebar" : "Show sidebar"}
+              onClick={() => toggleSidebar()}
+              aria-label={isSidebarVisible ? "Hide sidebar" : "Show sidebar"}
               className="flex h-8 w-8 items-center justify-center rounded-md border border-border text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
             >
-              {isOpen ? "‹" : "›"}
+              <span className="text-lg leading-none">☰</span>
             </button>
           </div>
 
-          {isOpen && (
+          {isSidebarVisible && (
             <div className="flex-1 space-y-6 overflow-y-auto p-4">
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-text-secondary">
-<<<<<<< HEAD
-                  Categories
-=======
-                  Project Focus
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
+                  Filter
                 </p>
 
                 <div className="space-y-1">
@@ -126,17 +96,10 @@ export function SideBar({
                     <button
                       key={category.label}
                       type="button"
-<<<<<<< HEAD
-                      onClick={() => setActiveCategory(category.label)}
-                      className={`flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm transition-colors duration-200 ${
-                        activeCategory === category.label
-                          ? "bg-primary/10 text-cyan"
-=======
                       onClick={() => handleCategoryChange(category.label)}
                       className={`sidebar-item flex w-full items-center justify-between rounded-md px-3 py-2 pl-4 text-left text-sm transition-colors duration-200 ${
                         activeCategory === category.label
                           ? "sidebar-item is-active bg-primary/10 text-cyan"
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
                           : "text-text-secondary hover:bg-surface-muted hover:text-text-primary"
                       }`}
                     >
@@ -167,14 +130,6 @@ export function SideBar({
               </div>
 
               <div className="space-y-2 border-t border-border pt-4">
-<<<<<<< HEAD
-                <button
-                  type="button"
-                  className="w-full rounded-md border border-border px-3 py-2 text-sm text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
-                >
-                  New Project
-                </button>
-=======
                 <a
                   href="/cv.pdf"
                   download
@@ -182,7 +137,6 @@ export function SideBar({
                 >
                   Download CV
                 </a>
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
 
                 <button
                   type="button"
@@ -197,28 +151,9 @@ export function SideBar({
       </aside>
 
       <div className="border-b border-border bg-surface px-4 py-3 lg:hidden">
-<<<<<<< HEAD
-        <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-text-secondary">
-          Quick Filters
-        </p>
-
-        <div className="flex flex-wrap gap-1.5">
-          {categories.slice(0, 4).map((category) => (
-            <button
-              key={category.label}
-              type="button"
-              onClick={() => setActiveCategory(category.label)}
-              className={`rounded-full border px-2.5 py-1 text-[11px] leading-none transition-colors duration-200 ${
-                activeCategory === category.label
-                  ? "border-cyan bg-primary/10 text-cyan"
-                  : "border-border text-text-secondary hover:border-cyan hover:text-cyan"
-              }`}
-            >
-              {category.label}
-=======
         <div className="mb-2 flex items-center justify-between">
           <p className="text-[10px] font-semibold uppercase tracking-widest text-text-secondary">
-            Project Focus
+            Filter
           </p>
 
           <button
@@ -251,7 +186,6 @@ export function SideBar({
               <span className="rounded-full bg-surface-muted px-2 py-0.5 text-[10px] text-text-secondary">
                 {category.count}
               </span>
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
             </button>
           ))}
         </div>

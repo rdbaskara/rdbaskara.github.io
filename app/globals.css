@@ -63,8 +63,6 @@ body {
 ::selection {
   background-color: var(--accent-cyan);
   color: #0a1128;
-<<<<<<< HEAD
-=======
 }
 
 .reveal {
@@ -198,11 +196,7 @@ body {
   left: 0;
   height: 3px;
   width: 0%;
-  background: linear-gradient(
-    90deg,
-    var(--primary),
-    var(--accent-cyan)
-  );
+  background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
   z-index: 50;
   transition: width 0.1s linear;
 }
@@ -309,5 +303,4 @@ body {
 
 .animated-link:hover::after {
   transform: scaleX(1);
->>>>>>> d2115cb4feb85a2c92eef7af70c10f51e4e9970f
 }

@@ -22,28 +22,34 @@ export function SectionTransition({
       return;
     }
 
-    const scrollContainer = element.closest("main");
+    const showElement = () => {
+      element.classList.add("is-visible");
+    };
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            element.classList.add("is-visible");
+            showElement();
             observer.unobserve(element);
           }
         });
       },
       {
-        root: scrollContainer instanceof Element ? scrollContainer : null,
-        rootMargin: "0px 0px -10% 0px",
-        threshold: 0.1,
-      }
+        rootMargin: "0px 0px 0px 0px",
+        threshold: 0,
+      },
     );
 
     observer.observe(element);
 
+    const fallbackTimer = window.setTimeout(() => {
+      showElement();
+    }, 1200);
+
     return () => {
       observer.disconnect();
+      window.clearTimeout(fallbackTimer);
     };
   }, []);
 
