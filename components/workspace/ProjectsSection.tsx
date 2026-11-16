@@ -46,12 +46,12 @@ export default function ProjectsSection({
       <Reveal delay={100}>
         <div className="mb-6 rounded-lg border border-border bg-surface p-4 md:p-6">
           <div className="flex items-center justify-between gap-3">
-            <div>
+            <div className="min-w-0">
               <h2 className="font-display text-base font-semibold text-text-primary md:text-lg">
                 Quick filter
               </h2>
 
-              <p className="mt-1 text-xs text-text-secondary md:text-sm">
+              <p className="mt-1 truncate text-xs text-text-secondary md:text-sm">
                 {activeCategory} · {activeStatus}
               </p>
             </div>
@@ -59,13 +59,31 @@ export default function ProjectsSection({
             <button
               type="button"
               onClick={() => setIsFilterOpen(!isFilterOpen)}
-              className="rounded-md border border-border px-3 py-2 text-xs text-text-secondary transition-colors hover:border-cyan hover:text-cyan md:hidden"
+              aria-expanded={isFilterOpen}
+              aria-controls="project-filters"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors hover:border-cyan hover:text-cyan md:hidden"
             >
-              {isFilterOpen ? "Hide" : "Filter"}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3.5 w-3.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3 4h18M6 12h12M10 20h4"
+                />
+              </svg>
+
+              Filter
             </button>
           </div>
 
           <div
+            id="project-filters"
             className={`mt-4 space-y-4 ${
               isFilterOpen ? "block" : "hidden"
             } md:block`}
@@ -81,7 +99,7 @@ export default function ProjectsSection({
                     key={status}
                     type="button"
                     onClick={() => setActiveStatus(status)}
-                    className={`rounded-full border px-3 py-2 text-xs transition-colors duration-200 md:px-4 md:text-sm ${
+                    className={`rounded-full border px-3 py-1.5 text-xs transition-colors duration-200 md:px-4 md:py-2 md:text-sm ${
                       activeStatus === status
                         ? "border-cyan bg-primary/10 text-cyan"
                         : "border-border text-text-secondary hover:border-cyan hover:text-cyan"
@@ -97,7 +115,7 @@ export default function ProjectsSection({
       </Reveal>
 
       <Reveal delay={200}>
-        <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:gap-8">
           {filteredProjects.length === 0 && (
             <div className="rounded-lg border border-dashed border-border bg-surface-muted p-8 text-center md:col-span-2">
               <p className="font-display text-lg font-semibold text-text-primary">
