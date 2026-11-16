@@ -131,19 +131,14 @@ export function SideBar({ activeCategory, onCategoryChange }: SideBarProps) {
 
               <div className="space-y-2 border-t border-border pt-4">
                 <a
-                  href="/cv.pdf"
-                  download
+                  href="https://drive.google.com/file/d/1yTfloB_HYAPraJiFS-DVUCyRc9_J--Z6/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full rounded-md border border-border px-3 py-2 text-center text-sm text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
                 >
                   Download CV
                 </a>
 
-                <button
-                  type="button"
-                  className="w-full rounded-md border border-border px-3 py-2 text-sm text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
-                >
-                  Export Portfolio
-                </button>
               </div>
             </div>
           )}
