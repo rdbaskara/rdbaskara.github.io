@@ -37,7 +37,7 @@ export function TopBar() {
           </span>
 
           <span className="font-display text-sm font-semibold text-text-primary">
-            Rindi Baskara
+            iBas
           </span>
         </button>
 
