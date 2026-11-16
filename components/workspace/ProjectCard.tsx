@@ -20,7 +20,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
 
   return (
     <TiltCard className="h-full">
-      <Card className="group flex h-full flex-col">
+      <Card className="interactive-card group flex h-full flex-col">
         {project.thumbnail ? (
           <div className="relative mb-4 aspect-video overflow-hidden rounded-lg border border-border bg-surface-muted">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -52,7 +52,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           <Tag label={project.status} variant={statusVariant} />
         </div>
 
-        <h3 className="mt-4 font-display text-lg font-semibold text-text-primary">
+        <h3 className="mt-4 font-display text-lg font-semibold text-text-primary transition-colors duration-300 group-hover:text-cyan">
           {project.title}
         </h3>
 

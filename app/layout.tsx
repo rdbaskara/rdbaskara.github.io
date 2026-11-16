@@ -38,9 +38,10 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
       >
-        <ScrollProgress />
-        <CursorGlow />
         <ThemeProvider>
+          <ScrollProgress />
+          <CursorGlow />
+
           <WorkspaceProvider>
             <MainWorkspace />
           </WorkspaceProvider>

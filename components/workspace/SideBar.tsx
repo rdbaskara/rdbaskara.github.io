@@ -56,19 +56,19 @@ export function SideBar({ activeCategory, onCategoryChange }: SideBarProps) {
   return (
     <>
       <aside
-        className={`hidden shrink-0 border-r border-border bg-surface transition-all duration-300 lg:block ${
+        className={`hidden shrink-0 border-r border-border bg-surface transition-[width] duration-300 ease-out lg:block ${
           isSidebarVisible ? "w-72" : "w-16"
         }`}
       >
-        <div className="flex h-full flex-col">
+        <div className="flex h-full flex-col overflow-hidden">
           <div className="flex items-center justify-between border-b border-border p-4">
             {isSidebarVisible && (
-              <div>
-                <span className="font-display text-sm font-semibold text-text-primary">
+              <div className="min-w-0">
+                <span className="block truncate font-display text-sm font-semibold text-text-primary">
                   Project Explorer
                 </span>
 
-                <p className="mt-1 text-xs text-text-secondary">
+                <p className="mt-1 truncate text-xs text-text-secondary">
                   Filter projects and access portfolio tools
                 </p>
               </div>
@@ -78,7 +78,7 @@ export function SideBar({ activeCategory, onCategoryChange }: SideBarProps) {
               type="button"
               onClick={() => toggleSidebar()}
               aria-label={isSidebarVisible ? "Hide sidebar" : "Show sidebar"}
-              className="flex h-8 w-8 items-center justify-center rounded-md border border-border text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
             >
               <span className="text-lg leading-none">☰</span>
             </button>

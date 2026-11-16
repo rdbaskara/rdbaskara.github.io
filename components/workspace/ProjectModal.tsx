@@ -16,7 +16,7 @@ const tabs = [
   "Overview",
   "Gallery",
   "Dashboard",
-   "Links",
+  "Links",
 ] as const;
 
 type ModalTab = (typeof tabs)[number];
@@ -187,21 +187,20 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   const slidesLink = project.links.find((link) => link.type === "slides");
 
-
   if (!isMounted) {
     return null;
   }
 
   return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-hidden bg-black/70 p-3 pt-6 pb-6 md:p-5 md:pt-8 md:pb-8"
+      className="modal-backdrop fixed inset-0 z-50 flex items-start justify-center overflow-hidden bg-black/70 p-3 pt-6 pb-6 md:p-5 md:pt-8 md:pb-8"
       onClick={onClose}
       role="presentation"
     >
       <div
         ref={modalRef}
         tabIndex={-1}
-        className="flex max-h-[calc(100vh-4.5rem)] w-full max-w-7xl flex-col overflow-hidden rounded-xl border border-border bg-surface outline-none md:max-h-[calc(100vh-5rem)]"
+        className="modal-panel flex max-h-[calc(100vh-4.5rem)] w-full max-w-7xl flex-col overflow-hidden rounded-xl border border-border bg-surface outline-none md:max-h-[calc(100vh-5rem)]"
         onClick={(event) => event.stopPropagation()}
         role="dialog"
         aria-modal="true"
@@ -263,7 +262,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
         </div>
 
-        <div className="min-h-0 flex-1 overflow-y-auto p-5 md:p-6">
+        <div
+          key={activeTab}
+          className="modal-content-enter min-h-0 flex-1 overflow-y-auto p-5 md:p-6"
+        >
           {activeTab === "Overview" && (
             <div className="space-y-6">
               <div>
