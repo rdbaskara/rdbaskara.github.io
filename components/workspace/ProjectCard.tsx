@@ -26,7 +26,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.thumbnail}
-              alt={project.title}
+              alt={`Dashboard preview for ${project.title}`}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
 

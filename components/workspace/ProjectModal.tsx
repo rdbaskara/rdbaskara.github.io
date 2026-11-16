@@ -169,7 +169,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
     document.addEventListener("keydown", handleKeyDown);
 
-    modalRef.current?.focus();
+    const closeButton = modalRef.current?.querySelector<HTMLButtonElement>(
+      "button[aria-label='Close project case study']",
+    );
+
+    closeButton?.focus();
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
@@ -355,13 +359,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {activeTab === "Gallery" && (
             <div>
               {project.slidesUrl ? (
-                <div
-                  className={
-                    isGalleryFullscreen
-                      ? "fixed inset-0 z-[60] flex flex-col gap-3 bg-black p-2 md:p-4"
-                      : "space-y-4"
-                  }
-                >
+                <div className="space-y-4">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="text-sm text-text-secondary">
                       Explore the case study presentation for this project.
@@ -370,11 +368,9 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <div className="flex flex-wrap gap-2">
                       <Button
                         variant="secondary"
-                        onClick={() =>
-                          setIsGalleryFullscreen((current) => !current)
-                        }
+                        onClick={() => setIsGalleryFullscreen(true)}
                       >
-                        {isGalleryFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+                        Fullscreen
                       </Button>
 
                       <a
@@ -387,11 +383,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     </div>
                   </div>
 
-                  <div
-                    className={
-                      isGalleryFullscreen ? "min-h-0 flex-1" : "h-[55vh]"
-                    }
-                  >
+                  <div className="h-[55vh]">
                     <iframe
                       src={project.slidesUrl}
                       className="h-full w-full rounded-lg border border-border"
@@ -411,19 +403,52 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </p>
                 </div>
               )}
+
+              {isGalleryFullscreen && project.slidesUrl && createPortal(
+                <div className="fixed inset-0 z-[70] flex flex-col bg-black">
+                  <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-slate-950 px-4 py-3">
+                    <p className="truncate text-sm font-medium text-white">
+                      {project.title} — Case Study Slides
+                    </p>
+
+                    <div className="flex shrink-0 gap-2">
+                      <Button
+                        variant="secondary"
+                        onClick={() => setIsGalleryFullscreen(false)}
+                      >
+                        Exit Fullscreen
+                      </Button>
+
+                      <a
+                        href={project.slidesUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="secondary">
+                          Open Presentation
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="min-h-0 flex-1">
+                    <iframe
+                      src={project.slidesUrl}
+                      className="h-full w-full border-0"
+                      allowFullScreen
+                      title={`${project.title} case study slides`}
+                    />
+                  </div>
+                </div>,
+                document.body,
+              )}
             </div>
           )}
 
           {activeTab === "Dashboard" && (
             <div>
               {dashboardLink ? (
-                <div
-                  className={
-                    isDashboardFullscreen
-                      ? "fixed inset-0 z-[60] flex flex-col gap-3 bg-black p-2 md:p-4"
-                      : "space-y-4"
-                  }
-                >
+                <div className="space-y-4">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="text-sm text-text-secondary">
                       Explore the interactive dashboard for this project.
@@ -432,13 +457,9 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <div className="flex flex-wrap gap-2">
                       <Button
                         variant="secondary"
-                        onClick={() =>
-                          setIsDashboardFullscreen((current) => !current)
-                        }
+                        onClick={() => setIsDashboardFullscreen(true)}
                       >
-                        {isDashboardFullscreen
-                          ? "Exit Fullscreen"
-                          : "Fullscreen"}
+                        Fullscreen
                       </Button>
 
                       <a
@@ -457,7 +478,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <TableauEmbed
                       url={dashboardLink.url}
                       title={`${project.title} interactive dashboard`}
-                      isFullscreen={isDashboardFullscreen}
                     />
                   </div>
                 </div>
@@ -472,6 +492,44 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     resources instead.
                   </p>
                 </div>
+              )}
+
+              {isDashboardFullscreen && dashboardLink && createPortal(
+                <div className="fixed inset-0 z-[70] flex flex-col bg-black">
+                  <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-slate-950 px-4 py-3">
+                    <p className="truncate text-sm font-medium text-white">
+                      {project.title} — Interactive Dashboard
+                    </p>
+
+                    <div className="flex shrink-0 gap-2">
+                      <Button
+                        variant="secondary"
+                        onClick={() => setIsDashboardFullscreen(false)}
+                      >
+                        Exit Fullscreen
+                      </Button>
+
+                      <a
+                        href={dashboardLink.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="secondary">
+                          Open Full Dashboard
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="min-h-0 flex-1">
+                    <TableauEmbed
+                      url={dashboardLink.url}
+                      title={`${project.title} interactive dashboard`}
+                      isFullscreen
+                    />
+                  </div>
+                </div>,
+                document.body,
               )}
             </div>
           )}

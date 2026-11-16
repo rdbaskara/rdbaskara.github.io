@@ -27,7 +27,7 @@ export function AboutSection() {
         <div className="relative h-64 w-full shrink-0 overflow-hidden rounded-2xl border border-white/10 md:h-72 md:w-60">
           <Image
             src="/images/profile/about2.png"
-            alt={siteConfig.name}
+            alt="Portrait of Rindi Baskara Ujianto, Data Analyst"
             fill
             sizes="(max-width: 768px) 100vw, 240px"
             className="object-cover"

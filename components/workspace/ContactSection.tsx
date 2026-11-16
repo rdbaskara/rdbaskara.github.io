@@ -77,7 +77,7 @@ export function ContactSection() {
           <div className="relative h-64 w-full shrink-0 overflow-hidden rounded-2xl border border-white/10 lg:h-72 lg:w-64">
             <Image
               src="/images/profile/contact.png"
-              alt={siteConfig.name}
+              alt="Contact illustration for Rindi Baskara Ujianto portfolio"
               fill
               sizes="(max-width: 1024px) 100vw, 256px"
               className="object-cover"

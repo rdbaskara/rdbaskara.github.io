@@ -42,8 +42,14 @@ export default function RootLayout({
           <ScrollProgress />
           <CursorGlow />
 
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+
           <WorkspaceProvider>
-            <MainWorkspace />
+            <main id="main-content">
+              <MainWorkspace />
+            </main>
           </WorkspaceProvider>
         </ThemeProvider>
       </body>

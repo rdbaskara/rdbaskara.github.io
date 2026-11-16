@@ -437,3 +437,52 @@ body {
     display: none !important;
   }
 }
+
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.interactive-card:focus-visible,
+.interactive-button:focus-visible,
+.metric-card:focus-visible,
+.tilt-card:focus-visible,
+.sidebar-item:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+.modal-panel:focus-visible {
+  outline: none;
+}
+
+.modal-panel:focus-within {
+  outline: none;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: var(--accent-cyan);
+  color: #0a1128;
+  font-size: 14px;
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transform: none;
+    transition: none;
+  }
+}
