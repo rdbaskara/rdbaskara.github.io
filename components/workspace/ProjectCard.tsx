@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Card } from "@/components/ui/Card";
 import { Tag } from "@/components/ui/Tag";
 import { TiltCard } from "@/components/ui/TiltCard";
@@ -23,11 +24,12 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
       <Card className="interactive-card group flex h-full flex-col">
         {project.thumbnail ? (
           <div className="relative mb-4 aspect-video overflow-hidden rounded-lg border border-border bg-surface-muted">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={project.thumbnail}
               alt={`Dashboard preview for ${project.title}`}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
             {project.featured && (
