@@ -61,24 +61,26 @@ export default function ProjectsSection({
               onClick={() => setIsFilterOpen(!isFilterOpen)}
               aria-expanded={isFilterOpen}
               aria-controls="project-filters"
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs text-text-secondary transition-colors hover:border-cyan hover:text-cyan md:hidden"
+              className="inline-flex shrink-0 items-center gap-1 rounded-full border border-border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-text-secondary transition-colors hover:border-cyan hover:text-cyan md:hidden"
             >
+              Filter
+
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-3.5 w-3.5"
+                className={`h-3 w-3 transition-transform duration-200 ${
+                  isFilterOpen ? "rotate-90" : ""
+                }`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth={2}
+                strokeWidth={2.5}
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M3 4h18M6 12h12M10 20h4"
+                  d="M9 5l7 7-7 7"
                 />
               </svg>
-
-              Filter
             </button>
           </div>
 
