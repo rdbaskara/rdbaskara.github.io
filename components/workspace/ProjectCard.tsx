@@ -29,6 +29,12 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
               alt={project.title}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
+
+            {project.featured && (
+              <span className="absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan backdrop-blur">
+                Featured Project
+              </span>
+            )}
           </div>
         ) : (
           <div className="mb-4 flex aspect-video items-center justify-center rounded-lg border border-dashed border-border bg-surface-muted">

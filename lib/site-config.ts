@@ -85,6 +85,7 @@ export type Project = {
   title: string;
   category: string;
   status: "Completed" | "Ongoing" | "Live";
+  featured?: boolean;
   summary: string;
   tags: string[];
   tools: string[];
@@ -105,6 +106,7 @@ export const projects: Project[] = [
     title: "Supply Chain Optimization: Profit Leakage & Delivery Performance",
     category: "Python",
     status: "Completed",
+    featured: true,
     summary:
       "Analyzed commercial discount policies and logistics performance to identify profit leakage, reduce late deliveries, and improve fulfillment performance.",
     tags: ["Python", "XGBoost", "Tableau", "Supply Chain"],

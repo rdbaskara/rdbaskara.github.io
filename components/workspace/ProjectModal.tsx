@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/Button";
 import { Tag } from "@/components/ui/Tag";
 import type { Project, ProjectLink } from "@/lib/site-config";
+import CodeBlock from "@/components/projects/CodeBlock";
 
 type ProjectModalProps = {
   project: Project;
@@ -15,7 +16,7 @@ const tabs = [
   "Overview",
   "Gallery",
   "Dashboard",
-  "Links",
+   "Links",
 ] as const;
 
 type ModalTab = (typeof tabs)[number];
@@ -185,6 +186,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   );
 
   const slidesLink = project.links.find((link) => link.type === "slides");
+
 
   if (!isMounted) {
     return null;
