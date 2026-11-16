@@ -18,7 +18,7 @@ type SideBarProps = {
 
 export function SideBar({ activeCategory, onCategoryChange }: SideBarProps) {
   const { isSidebarVisible, toggleSidebar } = useWorkspace();
-  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const categories = useMemo(() => {
     const categoryCounts = projects.reduce<Record<string, number>>(
@@ -145,39 +145,37 @@ export function SideBar({ activeCategory, onCategoryChange }: SideBarProps) {
       </aside>
 
       <div className="border-b border-border bg-surface px-4 py-3 lg:hidden">
-        <div className="mb-2">
-          <button
-            type="button"
-            onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-            aria-expanded={isMobileFilterOpen}
-            aria-controls="mobile-project-filters"
-            className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
-          >
-            Filter
+        <button
+          type="button"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-project-menu"
+          className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
+        >
+          Projects
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`h-2.5 w-2.5 transition-transform duration-200 ${
-                isMobileFilterOpen ? "rotate-90" : ""
-              }`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-        </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`h-2.5 w-2.5 transition-transform duration-200 ${
+              isMobileMenuOpen ? "rotate-90" : ""
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
 
         <div
-          id="mobile-project-filters"
-          className={`flex-col gap-1.5 ${
-            isMobileFilterOpen ? "flex" : "hidden"
+          id="mobile-project-menu"
+          className={`mt-3 flex-col gap-1.5 ${
+            isMobileMenuOpen ? "flex" : "hidden"
           }`}
         >
           {categories.map((category) => (
@@ -198,16 +196,16 @@ export function SideBar({ activeCategory, onCategoryChange }: SideBarProps) {
               </span>
             </button>
           ))}
-        </div>
 
-        <a
-          href="https://drive.google.com/file/d/1yTfloB_HYAPraJiFS-DVUCyRc9_J--Z6/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 block w-full rounded-md border border-border px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
-        >
-          Download CV
-        </a>
+          <a
+            href="https://drive.google.com/file/d/1yTfloB_HYAPraJiFS-DVUCyRc9_J--Z6/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 block w-full rounded-md border border-border px-3 py-2 text-center text-xs font-semibold uppercase tracking-wide text-text-secondary transition-colors hover:border-cyan hover:text-cyan"
+          >
+            CV
+          </a>
+        </div>
       </div>
     </>
   );
