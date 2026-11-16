@@ -65,7 +65,8 @@ export function TopBar() {
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation"
-            className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-text-secondary transition-colors hover:border-cyan hover:text-cyan md:hidden"
+            aria-expanded={isMenuOpen}
+            className="flex h-11 w-11 items-center justify-center rounded-md border border-border text-text-secondary transition-colors hover:border-cyan hover:text-cyan md:hidden"
           >
             {isMenuOpen ? "✕" : "☰"}
           </button>
@@ -80,7 +81,7 @@ export function TopBar() {
                 key={item.href}
                 type="button"
                 onClick={() => scrollToSection(item.href)}
-                className={`block w-full rounded-md px-3 py-2 text-left text-sm transition-colors duration-200 hover:bg-surface-muted hover:text-text-primary ${
+                className={`block w-full rounded-md px-3 py-3 text-left text-sm transition-colors duration-200 hover:bg-surface-muted hover:text-text-primary ${
                   activeSection === item.href.replace("#", "")
                     ? "bg-primary/10 text-cyan"
                     : "text-text-secondary"
