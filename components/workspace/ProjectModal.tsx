@@ -39,110 +39,74 @@ const FOCUSABLE_SELECTOR = [
 type TableauEmbedProps = {
   url: string;
   title: string;
+  isFullscreen?: boolean;
 };
 
-function TableauEmbed({ url, title }: TableauEmbedProps) {
-  const outerRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
+function TableauEmbed({
+  url,
+  title,
+  isFullscreen = false,
+}: TableauEmbedProps) {
+  const [status, setStatus] = useState<"loading" | "ready" | "error">(
+    "loading",
+  );
 
-  useEffect(() => {
-    const outer = outerRef.current;
-    const inner = innerRef.current;
-
-    if (!outer || !inner) {
-      return;
-    }
-
-    inner.innerHTML = "";
-
-    const pathname = url.replace("https://public.tableau.com/views/", "");
-    const [workbookAndSheet] = pathname.split("?");
-
-    if (!workbookAndSheet) {
-      return;
-    }
-
-    const uniqueId = `tableau-${Math.random().toString(36).slice(2)}`;
-
-    const placeholder = document.createElement("div");
-    placeholder.className = "tableauPlaceholder";
-    placeholder.id = uniqueId;
-    placeholder.style.position = "relative";
-    placeholder.style.width = "1600px";
-    placeholder.style.height = "900px";
-
-    const vizObject = document.createElement("object");
-    vizObject.className = "tableauViz";
-    vizObject.style.width = "1600px";
-    vizObject.style.height = "900px";
-    vizObject.style.display = "none";
-
-    const params = [
-      { name: "host_url", value: "https%3A%2F%2Fpublic.tableau.com%2F" },
-      { name: "embed_code_version", value: "3" },
-      { name: "site_root", value: "" },
-      { name: "name", value: workbookAndSheet },
-      { name: "tabs", value: "yes" },
-      { name: "toolbar", value: "yes" },
-      { name: "animate_transition", value: "yes" },
-      { name: "display_spinner", value: "yes" },
-      { name: "display_overlay", value: "yes" },
-      { name: "display_count", value: "yes" },
-      { name: "language", value: "en-US" },
-    ];
-
-    params.forEach(({ name, value }) => {
-      const param = document.createElement("param");
-      param.name = name;
-      param.value = value;
-      vizObject.appendChild(param);
-    });
-
-    placeholder.appendChild(vizObject);
-    inner.appendChild(placeholder);
-
-    const script = document.createElement("script");
-    script.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
-    inner.appendChild(script);
-
-    const updateScale = () => {
-      const outerWidth = outer.clientWidth;
-      const outerHeight = outer.clientHeight;
-
-      const scale = Math.min(outerWidth / 1600, outerHeight / 900);
-
-      const offsetX = (outerWidth - 1600 * scale) / 2;
-      const offsetY = (outerHeight - 900 * scale) / 2;
-
-      inner.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
-      inner.style.transformOrigin = "top left";
-      inner.style.width = "1600px";
-      inner.style.height = "900px";
-    };
-
-    updateScale();
-
-    const resizeObserver = new ResizeObserver(updateScale);
-    resizeObserver.observe(outer);
-
-    return () => {
-      resizeObserver.disconnect();
-      inner.innerHTML = "";
-    };
-  }, [url]);
+  const embedUrl = `${url}${
+    url.includes("?") ? "&" : "?"
+  }:embed=y&:showVizHome=no&:tabs=yes&:toolbar=yes`;
 
   return (
     <div
-      ref={outerRef}
-      className="h-[calc(100vh-18rem)] w-full overflow-hidden rounded-lg border border-border"
+      className={`relative w-full overflow-hidden rounded-lg border border-border bg-surface-muted ${
+        isFullscreen ? "h-full" : "h-[calc(100vh-18rem)]"
+      }`}
     >
-      <div ref={innerRef} className="origin-top-left" aria-label={title} />
+      {status === "loading" && (
+        <div className="absolute inset-0 z-10 flex items-center justify-center bg-surface">
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-border border-t-cyan" />
+
+            <span className="text-sm text-text-secondary">
+              Loading interactive dashboard…
+            </span>
+          </div>
+        </div>
+      )}
+
+      {status === "error" && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-surface p-6 text-center">
+          <p className="font-display text-lg font-semibold text-text-primary">
+            Dashboard failed to load
+          </p>
+
+          <p className="max-w-md text-sm text-text-secondary">
+            The interactive Tableau dashboard could not be loaded. You can still
+            open it directly in Tableau Public.
+          </p>
+
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <Button variant="secondary">Open Dashboard</Button>
+          </a>
+        </div>
+      )}
+
+      <iframe
+        src={embedUrl}
+        title={title}
+        className="h-full w-full border-0"
+        allowFullScreen
+        loading="lazy"
+        onLoad={() => setStatus("ready")}
+        onError={() => setStatus("error")}
+      />
     </div>
   );
 }
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [activeTab, setActiveTab] = useState<ModalTab>("Overview");
+  const [isDashboardFullscreen, setIsDashboardFullscreen] = useState(false);
+  const [isGalleryFullscreen, setIsGalleryFullscreen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -387,12 +351,51 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {activeTab === "Gallery" && (
             <div>
               {project.slidesUrl ? (
-                <iframe
-                  src={project.slidesUrl}
-                  className="h-[70vh] w-full rounded-lg border border-border"
-                  allowFullScreen
-                  title={`${project.title} case study slides`}
-                />
+                <div
+                  className={
+                    isGalleryFullscreen
+                      ? "fixed inset-0 z-[60] flex flex-col gap-3 bg-black p-2 md:p-4"
+                      : "space-y-4"
+                  }
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="text-sm text-text-secondary">
+                      Explore the case study presentation for this project.
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        variant="secondary"
+                        onClick={() =>
+                          setIsGalleryFullscreen((current) => !current)
+                        }
+                      >
+                        {isGalleryFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+                      </Button>
+
+                      <a
+                        href={project.slidesUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="secondary">Open Presentation</Button>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div
+                    className={
+                      isGalleryFullscreen ? "min-h-0 flex-1" : "h-[55vh]"
+                    }
+                  >
+                    <iframe
+                      src={project.slidesUrl}
+                      className="h-full w-full rounded-lg border border-border"
+                      allowFullScreen
+                      title={`${project.title} case study slides`}
+                    />
+                  </div>
+                </div>
               ) : (
                 <div className="rounded-lg border border-dashed border-border bg-surface-muted p-8 text-center">
                   <p className="text-sm font-medium text-text-primary">
@@ -410,25 +413,49 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {activeTab === "Dashboard" && (
             <div>
               {dashboardLink ? (
-                <div className="space-y-4">
+                <div
+                  className={
+                    isDashboardFullscreen
+                      ? "fixed inset-0 z-[60] flex flex-col gap-3 bg-black p-2 md:p-4"
+                      : "space-y-4"
+                  }
+                >
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="text-sm text-text-secondary">
                       Explore the interactive dashboard for this project.
                     </p>
 
-                    <a
-                      href={dashboardLink.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="secondary">Open Full Dashboard</Button>
-                    </a>
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        variant="secondary"
+                        onClick={() =>
+                          setIsDashboardFullscreen((current) => !current)
+                        }
+                      >
+                        {isDashboardFullscreen
+                          ? "Exit Fullscreen"
+                          : "Fullscreen"}
+                      </Button>
+
+                      <a
+                        href={dashboardLink.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button variant="secondary">
+                          Open Full Dashboard
+                        </Button>
+                      </a>
+                    </div>
                   </div>
 
-                  <TableauEmbed
-                    url={dashboardLink.url}
-                    title={`${project.title} interactive dashboard`}
-                  />
+                  <div className="min-h-0 flex-1">
+                    <TableauEmbed
+                      url={dashboardLink.url}
+                      title={`${project.title} interactive dashboard`}
+                      isFullscreen={isDashboardFullscreen}
+                    />
+                  </div>
                 </div>
               ) : (
                 <div className="rounded-lg border border-dashed border-border bg-surface-muted p-8 text-center">
@@ -437,7 +464,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </p>
 
                   <p className="mt-2 text-sm text-text-secondary">
-                    Explore the case study slides and available project resources instead.
+                    Explore the case study slides and available project
+                    resources instead.
                   </p>
                 </div>
               )}
