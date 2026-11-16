@@ -22,6 +22,13 @@ import { Parallax } from "@/components/ui/Parallax";
 export function MainWorkspace() {
   const [activeCategory, setActiveCategory] = useState("All Projects");
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <div className="flex h-screen flex-col overflow-hidden">
       <TopBar />
@@ -66,15 +73,23 @@ export function MainWorkspace() {
                     </p>
 
                     <div className="mt-6 flex flex-wrap items-center gap-3">
-                      <Button>View Projects</Button>
-                      <Button variant="secondary">Contact Me</Button>
+                      <Button onClick={() => scrollToSection("projects")}>
+                        View Projects
+                      </Button>
+
+                      <Button
+                        variant="secondary"
+                        onClick={() => scrollToSection("contact")}
+                      >
+                        Contact Me
+                      </Button>
                     </div>
                   </div>
 
                   <div className="relative h-72 w-60 shrink-0 overflow-hidden rounded-3xl border border-white/10 bg-surface/40 md:h-96 md:w-80">
                     <Image
                       src="/images/profile/overview.png"
-                      alt={siteConfig.name}
+                      alt="Portrait of Rindi Baskara Ujianto, Data Analyst"
                       fill
                       priority
                       sizes="(max-width: 768px) 60vw, 320px"
