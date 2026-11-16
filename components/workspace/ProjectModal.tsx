@@ -59,7 +59,9 @@ function TableauEmbed({
   return (
     <div
       className={`relative w-full overflow-hidden rounded-lg border border-border bg-surface-muted ${
-        isFullscreen ? "h-full" : "h-[calc(100vh-18rem)]"
+        isFullscreen
+          ? "h-full"
+          : "h-[calc(100vh-16rem)] md:h-[calc(100vh-18rem)]"
       }`}
     >
       {status === "loading" && (
@@ -383,7 +385,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                     </div>
                   </div>
 
-                  <div className="h-[55vh]">
+                  <div className="h-[45vh] md:h-[55vh]">
                     <iframe
                       src={project.slidesUrl}
                       className="h-full w-full rounded-lg border border-border"
