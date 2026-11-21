@@ -111,7 +111,7 @@ export const projects: Project[] = [
       "Analyzed commercial discount policies and logistics performance to identify profit leakage, reduce late deliveries, and improve fulfillment performance.",
     tags: ["Python", "XGBoost", "Tableau", "Supply Chain"],
     tools: ["Google Colab", "Python", "Tableau", "Excel", "Google Slides"],
-    metric: "Rp828K projected revenue recovery",
+    metric: "$828K projected revenue recovery",
     thumbnail: "/images/projects/supply-chain-optimization/thumbnail.png",
     gallery: [
       "/images/projects/supply-chain-optimization/slide-1.png",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
       background:
         "DataCo Global faced significant profit losses and delayed order fulfillment. This analysis evaluated commercial discount policies and logistics performance to recover financial value and improve delivery reliability.",
       goals: [
-        "Recover approximately Rp806K through discount optimization.",
+        "Recover approximately $806K through discount optimization.",
         "Reduce late delivery rate from 57.3% to 42.8%.",
         "Improve fulfillment performance through conditional same-day delivery and 3PL SLA enforcement.",
       ],
@@ -134,7 +134,7 @@ export const projects: Project[] = [
         "Development of five Tableau dashboards.",
       ],
       findings: [
-        "Estimated profit leakage exposure reached Rp1.81M.",
+        "Estimated profit leakage exposure reached $1.81M.",
         "82.2% of losses were concentrated in Fan Shop, Apparel, and Golf categories.",
         "57.3% of orders experienced late delivery, particularly in Europe and LATAM.",
       ],
